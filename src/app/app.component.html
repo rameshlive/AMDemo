@@ -1,2 +1,25 @@
-<h1>{{ title }}</h1>
-<router-outlet></router-outlet>
+
+<div class="login-container">
+    <mat-card class="example-card">
+        <mat-toolbar color="primary">Login</mat-toolbar>
+        <mat-card-content>
+            <p>
+                <mat-form-field> 
+                  <input matInput placeholder="Username">
+                  <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                </mat-form-field>
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button color="accent" (click)="openSnackbar()" mat-raised-button aria-label="Press enter to login">Submit</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

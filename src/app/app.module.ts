@@ -9,6 +9,7 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 
 
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { UserService } from './user/user.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     BrowserAnimationsModule,
     AngularMaterialModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,0 +1,30 @@
+.login-container {
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+.example-card {
+    padding: 0;
+    min-width: 400px;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 60px;
+    justify-content: center;
+}
+.mat-form-field{
+    display:block;
+ }
+.mat-icon {
+    font-size: 1.5em;
+}
+.mat-card-content {
+    margin: 20px 0px;
+    padding: 0 20px;
+}
+.mat-card>.mat-card-actions:last-child {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
