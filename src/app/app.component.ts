@@ -32,6 +32,11 @@ export class AppComponent implements OnInit,OnDestroy{
       })
   }
 
+  eyeClicked(){
+    this.hide = !this.hide;
+    this.submitted = false;
+  }
+
   onSubmit(){
     this.submitted = true;
     if(this.loginForm.valid){
