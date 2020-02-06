@@ -11,10 +11,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UserService } from './user/user.service';
+import { ThemeswitcherComponent } from './themeswitcher/themeswitcher/themeswitcher.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ThemeswitcherComponent
   ],
   imports: [
     BrowserModule,
