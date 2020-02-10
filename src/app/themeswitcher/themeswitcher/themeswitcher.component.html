@@ -1,7 +1,8 @@
-<div class="example-button-row" [@changeDivSize]=currentState>
+<div class="example-button-row">
     <button mat-fab (click)=changeState()><mat-icon>{{ currentState == 'initial' ? 'menu' : 'menu_open' }}</mat-icon></button>
-    <button mat-mini-fab></button>
-    <button mat-mini-fab color="primary"></button>
-    <button mat-mini-fab color="accent"></button>
-    <button mat-mini-fab color="warn"></button>
+    <div class="theme-switcher" [@changeDivSize]=currentState>
+        <button type="button" (click)="changeTheme('blue')" mat-mini-fab color="primary"></button>
+        <button type="button" (click)="changeTheme('red')" mat-mini-fab color="accent"></button>
+        <button type="button" (click)="changeTheme('green')" mat-mini-fab color="warn"></button>
+    </div>
 </div>

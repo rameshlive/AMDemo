@@ -1,6 +1,7 @@
+import { async } from '@angular/core/testing';
 import { UserService } from './user/user.service';
 import { Component, Inject,ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
-import {  Observable } from 'rxjs';
+import {  Observable, observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit,OnDestroy{
   hide:boolean = true;
   submitted:boolean = false;
   rTimer: number = 6;
+  observable: Observable<number>;
   obs$:Observable<any>;
   constructor(
     private _snackBar: MatSnackBar,
@@ -44,13 +46,24 @@ export class AppComponent implements OnInit,OnDestroy{
          observer.next(5)
        }, 5000);
      })
+
+     this.observable = Observable.create(observer => {
+      let value = 0
+      const interval = setInterval(() => {
+        observer.next(value)
+        value++
+      }, 1000)
+
+      return () => clearInterval(interval)
+    })
+  
   }
 
   get f() { return this.loginForm.controls; }
 
   openSnackbar(){
    
-    const snackBarRef = this._snackBar.open('Successfully Logged In' + this.rTimer,'Close',{
+    const snackBarRef = this._snackBar.open('Successfully Logged In' ,'Close',{
       duration: 5000
     })
       //const numbersObs$ = this._userService.getResults();
@@ -65,15 +78,13 @@ export class AppComponent implements OnInit,OnDestroy{
 
   eyeClicked(){
     this.hide = !this.hide;
-    this.submitted = false;
+     this.submitted = false;
+     console.log(this.loginForm)
+     return;
   }
-
   onSubmit(){
-   
-    
     this.submitted = true;
     if(this.loginForm.valid){
-     
       this.openSnackbar();
     }
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition, } from '@angular/animations';
 @Component({
   selector: 'app-themeswitcher',
@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
         right: '-50px'
       })),
       state('final', style({
-        right:'0px'
+        right:'10px'
       })),
       transition('initial=>final', animate('200ms')),
       transition('final=>initial', animate('200ms'))
@@ -18,14 +18,21 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
   ]
 })
 export class ThemeswitcherComponent implements OnInit {
-   currentState : string = 'initial';
+  currentState : string = 'initial';
+
+  @Output() themeClass = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
-
+  
   changeState(){
     this.currentState =  this.currentState == 'initial' ? 'final' : 'initial';
+  }
+
+  changeTheme(color:string){
+    console.log(color)
+    this.themeClass.emit(color)
   }
 
 }

@@ -1,11 +1,15 @@
 .example-button-row{
     position: fixed;
-    right: -50px;
+    right: 0;
     z-index: 1;
     top: 15px;
     .mat-button{
         position: relative;
         left: 0%;
+    }
+    .theme-switcher{
+        right: 10px;
+        position: absolute;
     }
     .mat-mini-fab{
         display: block;
@@ -13,6 +17,6 @@
     }
     .mat-fab{
         position: relative;
-        left: -56px;
+        right: 5px;
     }
 }
