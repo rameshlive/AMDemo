@@ -2,6 +2,8 @@ import { TimerComponent } from '../timer/timer.component';
 import { Component,OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+Router
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
   snackbarSub : any;
   constructor(
     private _snackBar: MatSnackBar,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private _router:Router
     ){ 
   }
   ngOnInit(): void {
@@ -30,7 +33,9 @@ export class LoginComponent implements OnInit {
 
   openSnackbar(){
     let snackBarRef = this._snackBar.openFromComponent(TimerComponent)
-    this.snackbarSub = snackBarRef.afterDismissed().subscribe(x => console.log("dsdsds"))
+    this.snackbarSub = snackBarRef.afterDismissed().subscribe(x => {
+      this._router.navigate(['dashboard'])
+    })
 
   }
   eyeClicked(){
@@ -45,7 +50,7 @@ export class LoginComponent implements OnInit {
     }
   }
   ngOnDestroy(): void {
-    this.snackbarSub.unSubscribe();
+    //this.snackbarSub.unSubscribe();
   }
 
 }

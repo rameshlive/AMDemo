@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { observable, interval, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { map, takeWhile, finalize } from 'rxjs/operators';
@@ -13,7 +14,10 @@ export class TimerComponent implements OnInit {
   count$ : Observable<number>;
   countDown = 5;
   message = 'Successfully Logged In Redirecting after';
-  constructor(public snackBarRef:MatSnackBar) { }
+  constructor(
+    public snackBarRef:MatSnackBar,
+    private _router: Router
+    ) { }
 
   ngOnInit() {
     const source = timer(0, 1000);
@@ -21,7 +25,8 @@ export class TimerComponent implements OnInit {
       map(i => this.countDown - i),
       takeWhile(i => i > 0),
       finalize(() => (
-        this.snackBarRef.dismiss()
+        this.snackBarRef.dismiss(),
+        this._router.navigate(['dashboard'])
       ))
     )
   }

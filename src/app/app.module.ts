@@ -15,6 +15,7 @@ import { ThemeswitcherComponent } from './themeswitcher/themeswitcher/themeswitc
 import { TimerComponent } from './timer/timer.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavComponent } from './nav/nav.component';
     ThemeswitcherComponent,
     TimerComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    DashboardComponent
   ],
   entryComponents:[
     TimerComponent
