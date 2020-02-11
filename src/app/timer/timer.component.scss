@@ -1,0 +1,12 @@
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .data{
+        font-size: 0.8rem;
+        .mat-hint{
+            font-weight: bold;
+            color: #ff4081;
+        }
+    }
+}

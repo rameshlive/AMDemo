@@ -12,11 +12,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UserService } from './user/user.service';
 import { ThemeswitcherComponent } from './themeswitcher/themeswitcher/themeswitcher.component';
+import { TimerComponent } from './timer/timer.component';
+import { LoginComponent } from './login/login.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeswitcherComponent
+    ThemeswitcherComponent,
+    TimerComponent,
+    LoginComponent,
+    NavComponent
+  ],
+  entryComponents:[
+    TimerComponent
   ],
   imports: [
     BrowserModule,
