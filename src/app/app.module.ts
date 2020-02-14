@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -34,7 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
