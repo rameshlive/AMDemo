@@ -21,9 +21,9 @@ import {
   MatTabsModule,
   MatCardModule,
   MatSnackBarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatBottomSheetModule
 } from '@angular/material';
-
 @NgModule({
   declarations: [],
   imports: [
@@ -48,7 +48,8 @@ import {
     MatTabsModule,
     MatCardModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBottomSheetModule
   ],
   exports:[
     MatButtonModule,
@@ -70,7 +71,8 @@ import {
     MatTabsModule,
     MatCardModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBottomSheetModule
   ],
   providers:[
      MatDatepickerModule,

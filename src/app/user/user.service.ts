@@ -5,27 +5,28 @@ Observable
   providedIn: 'root'
 })
 export class UserService {
-  
+  user : any[];
+  private islogged: BehaviorSubject<Boolean> = new BehaviorSubject(false);
+
   constructor() {
+    this.user = [
+      {username : "ramesh", password : "ramesh"},
+      {username : "angular", password : "angular"}
+    ]
   }
-  getResults():any{
-    const results = new Observable(observer =>{
-       setTimeout(() => {
-         observer.next(1)
-       }, 1000);
-       setTimeout(() => {
-        observer.next(2)
-      }, 2000);
-      setTimeout(() => {
-        observer.next(3)
-      }, 3000);
-      setTimeout(() => {
-        observer.next(4)
-      }, 4000);
-      setTimeout(() => {
-        observer.next(5)
-      }, 5000);
-    })
-    return results;
+  login(username:string,password:string):boolean{
+    const userExists = this.user.find( x => x.username == username && x.password == password);
+    if(!!userExists){
+      localStorage.setItem('user', username);
+      return true
+    }
+    return false;
+  }
+
+  isUserExists():boolean{
+    if(localStorage.getItem('user')){
+      return true;
+    }
+    return false;
   }
 }

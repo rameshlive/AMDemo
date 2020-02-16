@@ -3,7 +3,7 @@ import { observable, interval, Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { map, takeWhile, finalize } from 'rxjs/operators';
 import { timer } from 'rxjs';
-import { MatSnackBarRef, MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-timer',
@@ -13,7 +13,7 @@ import { MatSnackBarRef, MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/materi
 export class TimerComponent implements OnInit {
   count$ : Observable<number>;
   countDown = 5;
-  message = 'Successfully Logged In Redirecting after';
+  message = 'Redirecting after';
   constructor(
     public snackBarRef:MatSnackBar,
     private _router: Router

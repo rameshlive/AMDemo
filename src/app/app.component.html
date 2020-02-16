@@ -5,8 +5,6 @@
     type="square-spin">
     <p style="font-size: 12px; color: white">Loading...</p>
 </ngx-spinner>
-<app-nav></app-nav>
-<div class="container">
-<router-outlet></router-outlet>
+<div [class.main]="'main'">
+   <router-outlet></router-outlet>
 </div>
-<app-themeswitcher></app-themeswitcher>

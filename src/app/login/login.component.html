@@ -22,6 +22,12 @@
                     <mat-error *ngIf="!loginForm.get('password').hasError('required') && !loginForm.get('password').hasError('invalid')">Password should be atleast minimum 6 characters</mat-error>
                     </mat-form-field>
                 </p>
+                
+                <mat-error>
+                  <p *ngIf="!!errorMsg"  [class]="'error'">
+                   <i class="material-icons"> error </i>{{ errorMsg }}
+                  </p>
+                  </mat-error>
             </mat-card-content>
             <mat-card-actions>
               <button color="accent" mat-raised-button aria-label="Press enter to login">Submit</button>

@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -16,6 +17,8 @@ import { TimerComponent } from './timer/timer.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TimerComponent,
     LoginComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent,
+    BottomsheetComponent
   ],
   entryComponents:[
-    TimerComponent
+    TimerComponent,
+    BottomsheetComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule,
     NgxSpinnerModule
   ],
-  providers: [UserService],
+  providers: [UserService,AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
