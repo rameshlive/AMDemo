@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
     this.items = [
       {name : 'Apparels' , bgColor : '#010a43', avatar : '1.jpg'},
       {name : 'Pantry' , bgColor : '#21bf73',avatar : '2.jpg'},
-      {name : 'Mobiles' , bgColor : '#c02739',avatar : '1.jpg'},
-      {name : 'Fashion' , bgColor : '#feb72b',avatar : '2.jpg'} 
+      {name : 'Mobiles' , bgColor : '#c02739',avatar : '3.jpeg'},
+      {name : 'Fashion' , bgColor : '#feb72b',avatar : '4.jpeg'} 
     ]
   }
   ngOnInit() {
