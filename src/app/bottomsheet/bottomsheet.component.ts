@@ -11,5 +11,7 @@ export class BottomsheetComponent implements OnInit {
 
   ngOnInit() {
   }
+  changeTheme(value:string):void{
 
+  }
 }
