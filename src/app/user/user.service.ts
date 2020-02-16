@@ -22,7 +22,8 @@ export class UserService {
     }
     return false;
   }
-
+  
+  /* Check if User Logged in or Not using LocaL Storage*/
   isUserExists():boolean{
     if(localStorage.getItem('user')){
       return true;

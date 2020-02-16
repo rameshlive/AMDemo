@@ -19,6 +19,8 @@ import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
+import { AlertpopupComponent } from './alertpopup/alertpopup.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,14 @@ import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
     NavComponent,
     DashboardComponent,
     HomeComponent,
-    BottomsheetComponent
+    BottomsheetComponent,
+    AlertpopupComponent,
+    PagenotfoundComponent
   ],
   entryComponents:[
     TimerComponent,
-    BottomsheetComponent
+    BottomsheetComponent,
+    AlertpopupComponent
   ],
   imports: [
     BrowserModule,

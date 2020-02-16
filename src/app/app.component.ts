@@ -10,24 +10,19 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 
 export class AppComponent implements OnInit,OnDestroy{
-  showPage: boolean = false;
   loggedInUser : boolean = false;
   constructor(
-    private _spinner: NgxSpinnerService,
     private _userService : UserService,
     private _router:Router){ 
+      //this._spinner.hide();
     /* Show Loading when Navigation change*/
-     this._router.events.subscribe((routerEvent : Event) => {
-       if(routerEvent instanceof NavigationStart){
-          this._spinner.show()
-       }
+   /*   this._router.events.subscribe((routerEvent : Event) => {
        if(routerEvent instanceof NavigationEnd){
-         setTimeout(() => {
-           this._spinner.hide()
-         }, 2000);
-           
+            setTimeout(() => {
+              this._spinner.hide()
+            }, 2000); 
         }
-    }) 
+    })  */
   }
   ngOnInit(): void {
   }

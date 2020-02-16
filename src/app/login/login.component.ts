@@ -4,6 +4,7 @@ import { Component,OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  showPage : boolean = false;
   loginForm : FormGroup;
   hide:boolean = true;
   submitted:boolean = false;
@@ -26,24 +27,33 @@ export class LoginComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     private _router:Router,
-    private _userService : UserService
+    private _userService : UserService,
+    private _spinner: NgxSpinnerService,
     ){ 
   }
   ngOnInit(): void {
-      this.loginForm =  this.formBuilder.group({
-        username : ['',Validators.required],
-        password:['',[Validators.required, Validators.minLength(6)]]
-      })
 
+    /* Loading Indicator for Login Component */
+    this._spinner.show();
+    setTimeout(() => {
+      this._spinner.hide();
+      this.showPage = true;
+    }, 3000);
       
-      /*Check user exists*/
-      const isUserExists = this._userService.isUserExists();
-      if(isUserExists){
-          this.loggedInUser = true;
-          this._router.navigate(['dashboard'])
-      }
-  }
+    /* Set validation */
+    this.loginForm =  this.formBuilder.group({
+      username : ['',Validators.required],
+      password:['',[Validators.required, Validators.minLength(6)]]
+    })
 
+    /*Check user exists*/
+    const isUserExists = this._userService.isUserExists();
+    if(isUserExists){
+        this.loggedInUser = true;
+        this._router.navigate(['dashboard'])
+    }
+  }
+  
   get f() { return this.loginForm.controls; }
 
   openSnackbar(){

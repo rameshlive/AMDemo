@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 export interface item{
   name: string,
-  bgColor : string
+  bgColor : string,
+  avatar : string
 }
 
 @Component({
@@ -16,10 +17,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private _userService:UserService) {
     this.items = [
-      {name : 'Apparels' , bgColor : '#010a43'},
-      {name : 'Pantry' , bgColor : '#21bf73'},
-      {name : 'Mobiles' , bgColor : '#c02739'},
-      {name : 'Fashion' , bgColor : '#feb72b'} 
+      {name : 'Apparels' , bgColor : '#010a43', avatar : '1.jpg'},
+      {name : 'Pantry' , bgColor : '#21bf73',avatar : '2.jpg'},
+      {name : 'Mobiles' , bgColor : '#c02739',avatar : '1.jpg'},
+      {name : 'Fashion' , bgColor : '#feb72b',avatar : '2.jpg'} 
     ]
   }
   ngOnInit() {
