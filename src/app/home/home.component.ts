@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
   }
-  openSnackBar(message: string, action: string) {
+  openSnackBar(message: string) {
     this._wishlistSnack.open(message, "Close", {
       duration: 2000,
       verticalPosition: 'top',
