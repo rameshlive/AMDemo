@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  body{
@@ -14,4 +13,50 @@ h1{
     color:#fff;
     font-weight: 400;
     font-size: 3em;
+}
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Define the default theme (same as the example above).
+$default-app-primary: mat-palette($mat-pink);
+$default-app-accent: mat-palette($mat-blue-grey);
+$default-app-theme: mat-light-theme($default-app-primary,$default-app-accent);
+.default-theme{
+    @include angular-material-theme($default-app-theme);  
+}
+
+
+// Define the default theme (same as the example above).
+$indigo-app-primary: mat-palette($mat-indigo);
+$indigo-app-accent: mat-palette($mat-pink);
+$indigo-app-theme: mat-light-theme($indigo-app-primary,$indigo-app-accent);
+.indigo-theme{
+    @include angular-material-theme($indigo-app-theme);  
+}
+
+// Define the default theme (same as the example above).
+$deeppurple-app-primary: mat-palette($mat-deep-purple);
+$deeppurple-app-accent: mat-palette($mat-amber);
+$deeppurple-app-theme: mat-light-theme($deeppurple-app-primary,$deeppurple-app-accent);
+
+.deeppurple-theme{
+    @include angular-material-theme($deeppurple-app-theme);  
+}
+
+// Define the default theme (same as the example above).
+$purple-app-primary: mat-palette($mat-purple);
+$purple-app-accent: mat-palette($mat-green);
+$purple-app-theme: mat-light-theme($purple-app-primary,$purple-app-accent);
+
+.purple-theme{
+    @include angular-material-theme($purple-app-theme);  
+}
+
+// Define the default theme (same as the example above).
+$orange-app-primary: mat-palette($mat-orange);
+$orange-app-accent: mat-palette($mat-green);
+$orange-app-theme: mat-light-theme($orange-app-primary,$orange-app-accent);
+
+.orange-theme{
+    @include angular-material-theme($orange-app-theme);  
 }

@@ -1,3 +1,4 @@
+import { MessageService } from './message.service';
 import { AuthGuard } from './auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,8 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -21,6 +23,8 @@ import { HomeComponent } from './home/home.component';
 import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
 import { AlertpopupComponent } from './alertpopup/alertpopup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
+
 
 @NgModule({
   declarations: [
@@ -46,9 +50,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FlexLayoutModule,
+    FormsModule
   ],
-  providers: [UserService,AuthGuard],
+  providers: [UserService,AuthGuard,MessageService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

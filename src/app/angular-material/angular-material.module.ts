@@ -22,8 +22,11 @@ import {
   MatCardModule,
   MatSnackBarModule,
   MatMenuModule,
-  MatBottomSheetModule
+  MatBottomSheetModule,
+  MatRadioGroup
 } from '@angular/material';
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -75,7 +78,7 @@ import {
     MatBottomSheetModule
   ],
   providers:[
-     MatDatepickerModule,
+     MatDatepickerModule,MatRadioModule
   ]
 })
 export class AngularMaterialModule { }
