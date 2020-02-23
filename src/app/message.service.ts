@@ -6,11 +6,13 @@ import { Subject, Observable } from 'rxjs';
 })
 export class MessageService {
    public message = new Subject<String>();
-  constructor() {
-    
+   constructor() {
+      //this.updateMessage(localStorage.getItem("themeName"));
+     // console.log(this.getMessage().subscribe( x => console.log(x)))
   }
 
   updateMessage(value : string){
+    localStorage.setItem("themeName",value)
     this.message.next(value);
   }
 

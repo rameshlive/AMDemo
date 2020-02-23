@@ -31,3 +31,4 @@ export class TimerComponent implements OnInit {
     )
   }
 }
+

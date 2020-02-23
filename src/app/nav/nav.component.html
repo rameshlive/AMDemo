@@ -4,6 +4,11 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span class="menu-spacer"></span>
+      <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
+      <!-- Include text description of the icon's meaning for screen-readers -->
+      <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span>
         <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>

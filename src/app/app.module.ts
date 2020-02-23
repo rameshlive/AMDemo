@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
 import { AlertpopupComponent } from './alertpopup/alertpopup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 
 
 
@@ -37,12 +38,14 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HomeComponent,
     BottomsheetComponent,
     AlertpopupComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    WishlistinfoComponent
   ],
   entryComponents:[
     TimerComponent,
     BottomsheetComponent,
-    AlertpopupComponent
+    AlertpopupComponent,
+    WishlistinfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { MessageService } from './../message.service';
 import { BottomsheetComponent } from './../bottomsheet/bottomsheet.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,11 @@ export class NavComponent implements OnInit {
 
   constructor(
     private _router:Router,
-    private _bottomSheet : MatBottomSheet) { }
+    private _messageService : MessageService,
+    private _bottomSheet : MatBottomSheet) {
+
+      this._messageService.getMessage().subscribe( x => console.log(x))
+     }
 
   ngOnInit() {
   }
@@ -20,8 +25,8 @@ export class NavComponent implements OnInit {
   /* Logging out user */
   logoutUser():void{
     if(localStorage.getItem('user')){
-      localStorage.removeItem('user');
-      this._router.navigate(['login']);
+       localStorage.removeItem('user');
+       this._router.navigate(['login']);
     }
   }
 

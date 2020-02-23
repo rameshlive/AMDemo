@@ -15,25 +15,21 @@ import {MediaChange,MediaObserver} from '@angular/flex-layout';
 
 export class AppComponent implements OnInit,OnDestroy{
   loggedInUser : boolean = false;
-  selectedTheme : string = "default-theme";
+  selectedTheme : string;
   constructor(
     private _userService : UserService,
     private _messageService : MessageService,
     private _router:Router,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
-      this._messageService.getMessage().subscribe( x => this.selectedTheme = x.toString() + '-theme')
-      //this._spinner.hide();
-    /* Show Loading when Navigation change*/
-   /*   this._router.events.subscribe((routerEvent : Event) => {
-       if(routerEvent instanceof NavigationEnd){
-            setTimeout(() => {
-              this._spinner.hide()
-            }, 2000); 
-        }
-    })  */
   }
   ngOnInit(): void {
+      if (localStorage.getItem("themeName") == undefined || localStorage.getItem("themeName") === null) {
+          this.selectedTheme = "default-theme";
+      }else{
+          this.selectedTheme  = localStorage.getItem("themeName") + '-theme';
+          this._messageService.getMessage().subscribe(x => this.selectedTheme = x.toString() + '-theme')
+      }
   }
   ngOnDestroy(): void {
   }
