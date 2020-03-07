@@ -24,6 +24,7 @@ import { BottomsheetComponent } from './bottomsheet/bottomsheet.component';
 import { AlertpopupComponent } from './alertpopup/alertpopup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -39,7 +40,8 @@ import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
     BottomsheetComponent,
     AlertpopupComponent,
     PagenotfoundComponent,
-    WishlistinfoComponent
+    WishlistinfoComponent,
+    RegisterComponent
   ],
   entryComponents:[
     TimerComponent,

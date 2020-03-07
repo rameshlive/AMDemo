@@ -47,8 +47,8 @@ $orange-app-theme: mat-light-theme($orange-app-primary,$orange-app-accent);
 }
 
 // Define the default theme (same as the example above).
-$yellow-app-primary: mat-palette($mat-yellow);
-$yellow-app-accent: mat-palette($mat-indigo);
+$yellow-app-primary: mat-palette($mat-indigo);
+$yellow-app-accent: mat-palette($mat-yellow);
 $yellow-app-theme: mat-light-theme($yellow-app-primary,$yellow-app-accent);
 
 .yellow-theme{

@@ -1,6 +1,6 @@
 import { UserService } from './../user/user.service';
 import { TimerComponent } from '../timer/timer.component';
-import { Component,OnInit, OnDestroy } from '@angular/core';
+import { Component,OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -64,11 +64,8 @@ export class LoginComponent implements OnInit {
       this._router.navigate(['dashboard'])
     })
   }
-
-  eyeClicked(){
+  togglePasswordIcon(){
      this.hide = !this.hide;
-     this.submitted = false;
-     return;
   }
 
   onSubmit(){

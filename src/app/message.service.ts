@@ -17,7 +17,6 @@ export class MessageService {
   }
 
   getMessage():Observable<String>{
-    
     return this.message.asObservable();
   }
 }

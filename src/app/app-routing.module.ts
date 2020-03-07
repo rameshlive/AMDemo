@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     {
       path:'login',
       component:LoginComponent
+    },
+    {
+      path: 'register',
+      component: RegisterComponent
     },
     {
       path:'dashboard',

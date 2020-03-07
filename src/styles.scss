@@ -14,3 +14,12 @@ h1{
     font-weight: 400;
     font-size: 3em;
 }
+input:-internal-autofill-selected {
+    background-color: none !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}

@@ -6,31 +6,34 @@
             <mat-card-content>
                 <p>
                     <mat-form-field> 
-                      <input matInput placeholder="Username" formControlName="username" required>
-                      <mat-icon matSuffix color="primary">account_box</mat-icon>
+                      <input matInput placeholder="Username" #username="matInput" formControlName="username" required>
+                      <mat-icon matSuffix [color]="username.focused? 'primary' : ''">account_box</mat-icon>
                       <mat-error *ngIf="loginForm.get('username').hasError('required')">You must enter username</mat-error>
                     </mat-form-field>
                 </p>
                 <p>
                   <mat-form-field hintLabel="Min 6 characters">
-                        <input matInput maxlength="15" #password placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
-                        <button type="button" mat-icon-button matSuffix (click)="eyeClicked()">
-                        <mat-icon matSuffix color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
+                    <input matInput maxlength="15" #password="matInput" placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <mat-icon matSuffix (click)="togglePasswordIcon()" [color]="password.focused? 'primary':''">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  
                     <mat-hint align="end">{{password.value?.length || 0}}/15</mat-hint>
                     <mat-error *ngIf="loginForm.get('password').hasError('required')">You must enter password</mat-error>
                     <mat-error *ngIf="!loginForm.get('password').hasError('required') && !loginForm.get('password').hasError('invalid')">Password should be atleast minimum 6 characters</mat-error>
                     </mat-form-field>
                 </p>
-                
                 <mat-error>
                   <p *ngIf="!!errorMsg"  [class]="'error'">
                    <i class="material-icons"> error </i>{{ errorMsg }}
                   </p>
                   </mat-error>
+                  
             </mat-card-content>
             <mat-card-actions>
-              <button color="accent" mat-raised-button aria-label="Press enter to login">Submit</button>
+              <div class="newuser" fxLayou="row" fxLayoutAlign="space-between">
+                <mat-label color="primary"><a [routerLink]="['/']">Forgor Passowrd</a></mat-label>
+                <mat-label color="primary"><a [routerLink]="['/register']" > New User? Register</a></mat-label>
+             </div>
+              <button color="accent" [disabled]="loginForm.invalid" mat-raised-button aria-label="Press enter to login">Submit</button>
             </mat-card-actions>
           </form>
           </mat-card>
