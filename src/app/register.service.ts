@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RegisterService {
-  API_URL = 'http://localhost:3000';
+  API_URL = 'https://my-json-server.typicode.com/rameshlive/AMDemo';
   constructor(private _http : HttpClient) { }
 
   addUser(newuser):Observable<User>{
