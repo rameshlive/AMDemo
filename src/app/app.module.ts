@@ -1,3 +1,4 @@
+import { RegisterService } from './register.service';
 import { MessageService } from './message.service';
 import { AuthGuard } from './auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ import { AlertpopupComponent } from './alertpopup/alertpopup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -57,9 +59,10 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     NgxSpinnerModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [UserService,AuthGuard,MessageService],
+  providers: [UserService,AuthGuard,MessageService,RegisterService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

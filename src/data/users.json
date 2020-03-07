@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "uyygjg",
+      "username": "hgjhgj@amdemo.com",
+      "password": "hjghjghjgh",
+      "id": 1
+    },
+    {
+      "name": "uyygjg",
+      "username": "hgjhgj@amdemo.com",
+      "password": "hjghjghjgh",
+      "id": 2
+    },
+    {
+      "name": "ramesh",
+      "username": "rameah@amdemo.com",
+      "password": "hjghjghjgh",
+      "id": 3
+    },
+    {
+      "name": "popo",
+      "username": "popopp@amdemo.com",
+      "password": "popopopo",
+      "id": 4
+    },
+    {
+      "name": "yyyyyy",
+      "username": "yyyyyy@amdemo.com",
+      "password": "yyyyyy",
+      "id": 5
+    }
+  ]
+}

@@ -1,22 +1,27 @@
 
 <div class="login-container">
     <mat-card class="example-card">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <mat-toolbar color="primary">Register</mat-toolbar>
             <mat-card-content>
                 <mat-form-field>
-                    <input matInput placeholder="Username" #username="matInput" formControlName="username">
-                    <mat-icon matSuffix [color]="username.focused? 'primary' : ''">account_box</mat-icon>
-                    <mat-error *ngIf="registerForm.get('username').hasError('required')">Please enter username</mat-error>
+                    <input matInput placeholder="Name" #username formControlName="name" required>
+                    <mat-error *ngIf="registerForm.get('name').hasError('required')">Please enter your name</mat-error>
+                    <mat-error 
+                            *ngIf="!registerForm.get('name').hasError('required') &&  !registerForm.get('name').hasError('invalid')">
+                            Please enter only alphapets</mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Email"  formControlName="email">
+                    <input matInput placeholder="Username" #username formControlName="username" (input)="checkUsers($event.target.value)" required>
                     <span matSuffix class="domainname">@amdemo.com</span>
-                    <mat-error *ngIf="registerForm.get('email').hasError('required')">Please enter email address</mat-error>
+                    <mat-error *ngIf="registerForm.get('username').hasError('required')">Please enter username</mat-error>
+                    <mat-error 
+                            *ngIf="!registerForm.get('username').hasError('required') &&  !registerForm.get('username').hasError('invalid')">
+                            Username should be atleast 3 characters</mat-error>
+                    <mat-hint *ngIf="userExists" [class.error]="'userExists'"> Username is not available.Try another! </mat-hint>
                 </mat-form-field>
-
                 <mat-form-field hintLabel="Min 6 characters">
-                    <input matInput placeholder="Password" #password="matInput" formControlName="password" [type]="showPassword ? 'text' : 'password'">
+                    <input matInput placeholder="Password" #password="matInput" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
                     <mat-icon matSuffix [color]="password.focused ? 'primary':''"(click)="togglePassword()">{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
                     <mat-error *ngIf="registerForm.get('password').hasError('required')">Please enter password</mat-error>
                     <mat-error 
@@ -30,7 +35,7 @@
                  </div>
                 <button type="submit" color="accent" [disabled]="registerForm.invalid" mat-raised-button aria-label="click here to register">Submit</button>
             </mat-card-actions>
-        </form>
+            </form>
     </mat-card>
 </div>
  
