@@ -9,9 +9,10 @@ export class UserService {
   private islogged: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
   constructor() {
-    this.user =  JSON.parse(localStorage.getItem("users"));
+    
   }
   login(username:string,password:string):boolean{
+    this.user =  JSON.parse(localStorage.getItem("users")) || [];
     const userExists = this.user.find( x => x.username == username + '@amdemo.com' && x.password == password);
     if(!!userExists){
       localStorage.setItem('currentUser', username);

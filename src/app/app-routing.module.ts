@@ -32,7 +32,13 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
       component : DashboardComponent,
       canActivate: [AuthGuard],
       children:[
-        { path: '',component:HomeComponent}
+        {
+           path: '',
+           component:HomeComponent},
+        {
+          path: 'wishlists',
+          component: WishlistinfoComponent
+        }
       ]
     },
     {
