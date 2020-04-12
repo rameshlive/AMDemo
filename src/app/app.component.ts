@@ -25,10 +25,16 @@ export class AppComponent implements OnInit,OnDestroy{
   }
   ngOnInit(): void {
       if (localStorage.getItem("themeName") == undefined || localStorage.getItem("themeName") === null) {
+          document.body.className = "default-theme";
           this.selectedTheme = "default-theme";
       }else{
           this.selectedTheme  = localStorage.getItem("themeName") + '-theme';
-          this._messageService.getMessage().subscribe(x => this.selectedTheme = x.toString() + '-theme')
+          document.body.className = localStorage.getItem("themeName") + '-theme';
+          this._messageService.getMessage().subscribe(x => {
+            this.selectedTheme = x.toString() + '-theme';
+            document.body.className = x.toString() + '-theme';
+            console.log(document.body)
+          })
       }
   }
   ngOnDestroy(): void {

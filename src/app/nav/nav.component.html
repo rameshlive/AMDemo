@@ -5,6 +5,7 @@
       </button>
       <span class="menu-spacer"></span>
       <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
+      
       <!-- Include text description of the icon's meaning for screen-readers -->
       <span class="cdk-visually-hidden">
         Example with a home icon with overlaid badge showing the number 15
@@ -14,6 +15,10 @@
             <button mat-menu-item>
               <mat-icon>account_box</mat-icon>
               <span>Accounts</span>
+            </button>
+            <button mat-menu-item (click)="openWishlist()">
+              <mat-icon>favorite</mat-icon>
+              <span>Wishlist ({{ wishlistCount }})</span>
             </button>
             <button mat-menu-item>
               <mat-icon>settings</mat-icon>

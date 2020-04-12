@@ -31,7 +31,6 @@ export class ThemeswitcherComponent implements OnInit {
   }
 
   changeTheme(color:string){
-    console.log(color)
     this.themeClass.emit(color)
   }
 

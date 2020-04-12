@@ -15,6 +15,9 @@ export class BottomsheetComponent implements OnInit {
   ngOnInit() {
   }
   changeTheme(value:string):void{
+    let bodytag = document.getElementsByTagName('body')[0];
+    bodytag.className = '';
     this._messageService.updateMessage(value);
+    bodytag.className = value + '-theme';
   }
 }

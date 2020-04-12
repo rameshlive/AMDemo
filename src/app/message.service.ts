@@ -6,6 +6,7 @@ import { Subject, Observable } from 'rxjs';
 })
 export class MessageService {
    public message = new Subject<String>();
+ 
    constructor() {
       //this.updateMessage(localStorage.getItem("themeName"));
      // console.log(this.getMessage().subscribe( x => console.log(x)))

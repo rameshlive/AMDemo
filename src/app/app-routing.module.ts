@@ -1,3 +1,4 @@
+import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
@@ -20,6 +21,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     {
       path: 'register',
       component: RegisterComponent
+    },
+    {
+      path: 'wishlists',
+      component: WishlistinfoComponent,
+      canActivate: [AuthGuard]
     },
     {
       path:'dashboard',

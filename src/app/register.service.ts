@@ -9,9 +9,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterService {
   API_URL = 'https://my-json-server.typicode.com/rameshlive/AMDemo';
-  constructor(private _http : HttpClient) { }
+  constructor(private _http : HttpClient) {
+      this._http.get<User>(`${this.API_URL}/users`).subscribe(x => console.log(x))
 
-  addUser(newuser):Observable<User>{
-      return this._http.post<User>(`${this.API_URL}/users`,newuser)
+   }
+
+  addUser(newuser:User){
+     // return this._http.post<User>(`${this.API_URL}/users`,newuser)
+      let users = [];
+      users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push(newuser);
+      localStorage.setItem('users',JSON.stringify(users));
   }
 }

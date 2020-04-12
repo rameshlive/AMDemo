@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { UserService } from './../user/user.service';
 import { TimerComponent } from '../timer/timer.component';
 import { Component,OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
@@ -5,8 +6,9 @@ import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-
-
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+Observable
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +31,10 @@ export class LoginComponent implements OnInit {
     private _router:Router,
     private _userService : UserService,
     private _spinner: NgxSpinnerService,
+    private db:AngularFireDatabase,
+    
     ){ 
+      
   }
   ngOnInit(): void {
 

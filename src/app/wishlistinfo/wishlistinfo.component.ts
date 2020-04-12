@@ -1,3 +1,4 @@
+import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wishlistinfo.component.scss']
 })
 export class WishlistinfoComponent implements OnInit {
-
-  constructor() { }
+  wishlists:any = [];
+  constructor(
+    private _cartService : CartService
+  ) { }
 
   ngOnInit() {
+    this.loadWishlists();
   }
 
+  loadWishlists(){
+    this.wishlists = this._cartService.getWishlists();
+  }
 }

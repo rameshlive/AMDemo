@@ -17,21 +17,15 @@ export interface item{
 export class HomeComponent implements OnInit {
   items: item[];
 
-  constructor(private _userService:UserService,private _wishlistSnack : MatSnackBar) {
+  constructor(private _userService:UserService) {
     this.items = [
-      {name : 'Apparels' , bgColor : '#010a43', avatar : '1.jpg'},
-      {name : 'Pantry' , bgColor : '#21bf73',avatar : '2.jpg'},
-      {name : 'Mobiles' , bgColor : '#c02739',avatar : '1.jpg'},
-      {name : 'Fashion' , bgColor : '#feb72b',avatar : '2.jpg'} 
+      {name : 'Apparels' , bgColor : '#010a43', avatar : 'aaaa.png'},
+      {name : 'Pantry' , bgColor : '#21bf73',avatar : 'bgeek-img-4_1.png'},
+      {name : 'Mobiles' , bgColor : '#c02739',avatar : 'aaaa.png'},
+      {name : 'Fashion' , bgColor : '#feb72b',avatar : 'bgeek-img-4_1.png'} 
     ]
   }
   ngOnInit() {
   }
-  openSnackBar(message: string) {
-    this._wishlistSnack.open(message, "Close", {
-      duration: 2000,
-      verticalPosition: 'top',
-      panelClass: ['mat-toolbar', 'mat-primary']
-    });
-  }
+
 }

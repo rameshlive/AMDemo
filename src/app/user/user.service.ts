@@ -9,23 +9,20 @@ export class UserService {
   private islogged: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
   constructor() {
-    this.user = [
-      {username : "ramesh", password : "ramesh"},
-      {username : "angular", password : "angular"}
-    ]
+    this.user =  JSON.parse(localStorage.getItem("users"));
   }
   login(username:string,password:string):boolean{
-    const userExists = this.user.find( x => x.username == username && x.password == password);
+    const userExists = this.user.find( x => x.username == username + '@amdemo.com' && x.password == password);
     if(!!userExists){
-      localStorage.setItem('user', username);
-      return true
+      localStorage.setItem('currentUser', username);
+      return true;
     }
     return false;
   }
   
   /* Check if User Logged in or Not using LocaL Storage*/
   isUserExists():boolean{
-    if(localStorage.getItem('user')){
+    if(localStorage.getItem('currentUser')){
       return true;
     }
     return false;

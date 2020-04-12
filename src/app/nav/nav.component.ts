@@ -1,3 +1,4 @@
+import { CartService } from './../cart.service';
 import { MessageService } from './../message.service';
 import { BottomsheetComponent } from './../bottomsheet/bottomsheet.component';
 import { Router } from '@angular/router';
@@ -10,13 +11,14 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet'
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
+  wishlistCount:number = 0;
   constructor(
     private _router:Router,
     private _messageService : MessageService,
+    private _cartService :CartService,
     private _bottomSheet : MatBottomSheet) {
-
       this._messageService.getMessage().subscribe( x => console.log(x))
+      this._cartService.getTotalCount().subscribe(x => this.wishlistCount = x )
      }
 
   ngOnInit() {
@@ -32,6 +34,11 @@ export class NavComponent implements OnInit {
 
   /*Open Theme Switcher*/
   openThemeSwitcher(){
-      this._bottomSheet.open(BottomsheetComponent)
+      this._bottomSheet.open(BottomsheetComponent);
+  }
+
+  /*open ewishlists*/
+  openWishlist(){
+      this._router.navigate(['wishlists']);
   }
 }

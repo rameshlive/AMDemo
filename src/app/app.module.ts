@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { RegisterService } from './register.service';
 import { MessageService } from './message.service';
 import { AuthGuard } from './auth.guard';
@@ -27,8 +28,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     AlertpopupComponent,
     PagenotfoundComponent,
     WishlistinfoComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductComponent
   ],
   entryComponents:[
     TimerComponent,
@@ -60,7 +63,9 @@ import { HttpClientModule } from '@angular/common/http';
     NgxSpinnerModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.fireBase),
+    AngularFireDatabaseModule
   ],
   providers: [UserService,AuthGuard,MessageService,RegisterService],
   bootstrap: [AppComponent],
