@@ -30,8 +30,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule} from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ProductComponent } from './product/product.component';
 
 @NgModule({
@@ -65,9 +63,7 @@ import { ProductComponent } from './product/product.component';
     NgxSpinnerModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule,
-    //AngularFireModule.initializeApp(environment.fireBase),
-    //AngularFireDatabaseModule
+    HttpClientModule
   ],
   providers: [UserService,AuthGuard,MessageService,RegisterService,CartService,LocalusersstorageService],
   bootstrap: [AppComponent],
