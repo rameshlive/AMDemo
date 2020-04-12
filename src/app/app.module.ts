@@ -64,8 +64,8 @@ import { ProductComponent } from './product/product.component';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.fireBase),
-    AngularFireDatabaseModule
+    //AngularFireModule.initializeApp(environment.fireBase),
+    //AngularFireDatabaseModule
   ],
   providers: [UserService,AuthGuard,MessageService,RegisterService],
   bootstrap: [AppComponent],
