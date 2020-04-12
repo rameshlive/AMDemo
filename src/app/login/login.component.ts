@@ -6,8 +6,6 @@ import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { AngularFirestore } from '@angular/fire/firestore';
 Observable
 @Component({
   selector: 'app-login',
@@ -30,8 +28,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private _router:Router,
     private _userService : UserService,
-    private _spinner: NgxSpinnerService,
-    private db:AngularFireDatabase,
+    private _spinner: NgxSpinnerService
     
     ){ 
       
