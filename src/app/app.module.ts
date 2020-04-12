@@ -1,3 +1,5 @@
+import { LocalusersstorageService } from './localusersstorage.service';
+import { CartService } from './cart.service';
 import { environment } from './../environments/environment';
 import { RegisterService } from './register.service';
 import { MessageService } from './message.service';
@@ -67,7 +69,7 @@ import { ProductComponent } from './product/product.component';
     //AngularFireModule.initializeApp(environment.fireBase),
     //AngularFireDatabaseModule
   ],
-  providers: [UserService,AuthGuard,MessageService,RegisterService],
+  providers: [UserService,AuthGuard,MessageService,RegisterService,CartService,LocalusersstorageService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
