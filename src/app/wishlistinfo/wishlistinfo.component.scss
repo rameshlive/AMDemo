@@ -16,3 +16,13 @@ mat-card-actions{
         object-fit: cover;
     }
   }
+#wishlist{
+    .mat-card-image{
+        margin: 0 auto 20px;
+        width: auto;
+        max-width: 100%;
+        max-height: 250px;
+        display: block;
+      }
+}
+ 

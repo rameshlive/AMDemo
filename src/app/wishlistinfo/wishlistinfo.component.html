@@ -1,5 +1,5 @@
 <div fxLayoutGap="10px" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column"  fxLayout.md="row"
-fxLayoutAlign="center">
+fxLayoutAlign="center" id="wishlist">
     <div  *ngIf="wishlists.length; else noproducts">
         <mat-card class="example-card" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
             <mat-card-header>
