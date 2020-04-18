@@ -28,4 +28,10 @@ export class UserService {
     }
     return false;
   }
+
+  currentUser():boolean{
+    if(localStorage.getItem('currentUser')){
+      return JSON.parse(localStorage.getItem('currentUser'));
+    }
+  }
 }

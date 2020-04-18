@@ -17,6 +17,6 @@ export class WishlistinfoComponent implements OnInit {
   }
 
   loadWishlists(){
-    this.wishlists = this._cartService.getWishlists();
+    this.wishlists = this._cartService.getWishlistByCurrentUser();
   }
 }

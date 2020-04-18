@@ -23,22 +23,18 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
       component: RegisterComponent
     },
     {
-      path: 'wishlists',
-      component: WishlistinfoComponent,
-      canActivate: [AuthGuard]
-    },
-    {
       path:'dashboard',
       component : DashboardComponent,
       canActivate: [AuthGuard],
       children:[
         {
            path: '',
-           component:HomeComponent},
+           component:HomeComponent
+        },
         {
           path: 'wishlists',
           component: WishlistinfoComponent
-        }
+        },
       ]
     },
     {

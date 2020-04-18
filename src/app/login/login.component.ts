@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
           this.errorMsg = "";
           this.openSnackbar();
         }else{
-            this.errorMsg = "Invalid Credentials";
+            this.errorMsg = "Invalid Username or Password ";
         }
       }
   }

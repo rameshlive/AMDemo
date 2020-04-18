@@ -23,7 +23,7 @@
                 </mat-form-field>
                 <mat-form-field hintLabel="Min 6 characters">
                     <input matInput placeholder="Password" #password="matInput" formControlName="password" [type]="showPassword ? 'text' : 'password'" required>
-                    <mat-icon matSuffix [color]="password.focused ? 'primary':''"(click)="togglePassword()">{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    <mat-icon matSuffix [color]="password.focused ? 'primary':''" (click)="togglePassword()">{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
                     <mat-error *ngIf="registerForm.get('password').hasError('required')">Please enter password</mat-error>
                     <mat-error 
                             *ngIf="!registerForm.get('password').hasError('required') &&  !registerForm.get('password').hasError('invalid')">

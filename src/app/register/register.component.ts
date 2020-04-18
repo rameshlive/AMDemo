@@ -70,6 +70,7 @@ export class RegisterComponent implements OnInit {
           "id" :   newuserId,
           "name" : name,
           "username" : username + this.domainname,
+          "email" : this.domainname,
           "password" : password
       }
      this._registerService.addUser(newuser);

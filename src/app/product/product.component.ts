@@ -1,6 +1,7 @@
+import { item } from './../home/home.component';
 import { MessageService } from './../message.service';
 import { CartService } from './../cart.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -10,6 +11,8 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ProductComponent implements OnInit {
   @Input() product: any;
+  @ViewChildren('item') favicons: QueryList<any>;
+  selectedItem : string;
   constructor(
     private _wishlistSnack : MatSnackBar,
     private _CartService :CartService
@@ -17,14 +20,15 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
   }
-  openSnackBar(message: string) {
-    this._CartService.addWishlist(this.product);
-    message = `The product ${message} addedd to your wishlist!`;
-    this._wishlistSnack.open(message, "Close", {
-      duration: 2000,
-      verticalPosition: 'top',
-      panelClass: ['mat-toolbar', 'mat-accent']
-    });
+  addToWishlist(id:string,productname: string) {
+    this._CartService.addToWishlist(this.product);
 
+    this.selectedItem = id;
+
+    productname = `The product ${productname} addedd to your wishlist!`;
+    this._wishlistSnack.open(productname, "Close", {
+      duration: 20000000,
+      verticalPosition: 'top'
+    });
   }
 }

@@ -1,5 +1,14 @@
 mat-card-actions{
     align-items: center;
+    
+    .favoriteBtn{
+        background: transparent;
+        border: 0;
+        outline: none;
+    }
+    .favoriteBtn:disabled{
+        cursor: auto;
+    }
     mat-icon{
         margin: 0 5px;
         cursor: pointer;
@@ -15,4 +24,14 @@ mat-card-actions{
         flex-shrink: 0;
         object-fit: cover;
     }
+
   }
+  .mat-card-image{
+    width: auto;
+    margin: 0 -16px 16px -16px;
+    max-height: 300px;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}

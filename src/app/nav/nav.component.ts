@@ -11,7 +11,7 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet'
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  wishlistCount:number = 0;
+  wishlistCount : number;
   constructor(
     private _router:Router,
     private _messageService : MessageService,
@@ -26,8 +26,8 @@ export class NavComponent implements OnInit {
 
   /* Logging out user */
   logoutUser():void{
-    if(localStorage.getItem('user')){
-       localStorage.removeItem('user');
+    if(localStorage.getItem('currentUser')){
+       localStorage.removeItem('currentUser');
        this._router.navigate(['login']);
     }
   }
@@ -39,6 +39,6 @@ export class NavComponent implements OnInit {
 
   /*open ewishlists*/
   openWishlist(){
-      this._router.navigate(['wishlists']);
+      this._router.navigate(['dashboard/wishlists']);
   }
 }
