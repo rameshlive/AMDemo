@@ -22,9 +22,7 @@ export class ProductComponent implements OnInit {
   }
   addToWishlist(id:string,productname: string) {
     this._CartService.addToWishlist(this.product);
-
     this.selectedItem = id;
-
     productname = `The product ${productname} addedd to your wishlist!`;
     this._wishlistSnack.open(productname, "Close", {
       duration: 20000000,

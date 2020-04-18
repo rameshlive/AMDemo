@@ -2,7 +2,7 @@ import { MessageService } from './message.service';
 import { Observable } from 'rxjs';
 import { Router, NavigationStart,Event, NavigationEnd } from '@angular/router';
 import { UserService } from './user/user.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import {MediaChange,MediaObserver} from '@angular/flex-layout';
 
@@ -33,7 +33,6 @@ export class AppComponent implements OnInit,OnDestroy{
           this._messageService.getMessage().subscribe(x => {
             this.selectedTheme = x.toString() + '-theme';
             document.body.className = x.toString() + '-theme';
-            console.log(document.body)
           })
       }
   }

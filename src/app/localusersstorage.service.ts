@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -33,15 +34,39 @@ export class LocalusersstorageService {
   }
 
   getProducts():String[]{
-      let products = JSON.parse(localStorage.getItem('products'));
-      if(localStorage.getItem('currentUser')){
-        this.currentUser = localStorage.getItem('currentUser');
+      /*let products = JSON.parse(localStorage.getItem('products'));
+      
+      let wishlists = JSON.parse(localStorage.getItem('wishlists'));
+      if( wishlists != null){
+           wishlists = wishlists[this.currentUser] !== undefined ? wishlists[this.currentUser] : [];
       }
       if( products == null ){
+          products.map(function(element){
+              console.log(element)
+          })
           products = this.items;
+          localStorage.setItem("products",JSON.stringify(products))
+      }*/
+
+      if(localStorage.getItem('currentUser')){
+          this.currentUser = localStorage.getItem('currentUser');
       }
-      
-      return products;
+      var wishlists = JSON.parse(localStorage.getItem('wishlists'));
+      if( wishlists != null){
+           wishlists = wishlists[this.currentUser] !== undefined ? wishlists[this.currentUser] : [];
+      }
+       this.items.map(function(element){
+          let elementId = element.id;
+          let isExists = wishlists.find(wishlist => wishlist.id == elementId);
+          if (!!isExists){
+              element.isWishlisted = true;
+          }else{
+              element.isWishlisted = false;
+          }
+
+       })
+       
+      return this.items;
   }
 }
 

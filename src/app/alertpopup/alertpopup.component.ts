@@ -10,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class AlertpopupComponent implements OnInit {
 
   constructor(
-    private _alertDialogRef : MatDialogRef<AlertpopupComponent>,
-    private _router : Router
+      private _alertDialogRef : MatDialogRef<AlertpopupComponent>,
+      private _router : Router
     ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
   closeAlert(){
       this._alertDialogRef.close();
       this._router.navigate(['login'])

@@ -76,8 +76,7 @@ export class RegisterComponent implements OnInit {
      this._registerService.addUser(newuser);
      this._registerSnackbar.open("You have been succefully registered.Please wait redirecting you to login","Close",{
        duration: 5000,
-       verticalPosition: 'bottom',
-       panelClass: ['mat-toolbar', 'mat-accent']
+       verticalPosition: 'bottom'
      })
      this._registerSnackbar._openedSnackBarRef.afterDismissed().subscribe(x => {
         this._router.navigate(['login'])

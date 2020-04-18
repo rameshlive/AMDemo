@@ -18,10 +18,12 @@ export class NavComponent implements OnInit {
     private _cartService :CartService,
     private _bottomSheet : MatBottomSheet) {
       this._messageService.getMessage().subscribe( x => console.log(x))
-      this._cartService.getTotalCount().subscribe(x => this.wishlistCount = x )
+      this._cartService.getTotalWishlistCount().subscribe(x => this.wishlistCount = x )
      }
 
   ngOnInit() {
+      this._cartService.getTotalWishlistCount().subscribe(x => this.wishlistCount = x )
+      this.wishlistCount = this.wishlistCount == undefined ? 0 : this.wishlistCount;
   }
 
   /* Logging out user */

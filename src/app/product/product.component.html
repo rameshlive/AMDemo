@@ -1,19 +1,32 @@
-<mat-card-header>
-    <div mat-card-avatar class="example-header-image"><img src="./assets/{{product.id}}.png"/></div>
-    <mat-card-title>{{product.name}}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="./assets/{{product.id}}.png">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="primary">BUY</button>
-    <button mat-raised-button color="accent">SHARE</button>
+
+  <div class="img-container">
+    <img mat-card-image src="./assets/{{product.id}}.png">
+  </div>
+  <div class="product-name">
+    <!--<div mat-card-avatar class="example-header-image">
+      <img src="./assets/{{product.id}}.png"/>
+    </div>-->
+    <div mat-card-title class="mat-card-tiltle">{{product.name}}</div>
+    <div mat-card-subtitle>Dog Breed</div>
+  </div>
+  <div mat-card-actions class="mat-card-actions"> 
+    <!--<button mat-raised-button color="primary">BUY</button>
+    <button mat-raised-button color="accent">SHARE</button>--->
     <div fxFlex></div>
-    <button class="favoriteBtn" #item [disabled]="selectedItem == product.id" (click)="addToWishlist(product.id,product.name)"> <mat-icon> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon></button>
+    <button class="favoriteBtn" #item 
+            [disabled]="selectedItem == product.id" 
+            (click)="addToWishlist(product.id,product.name)">
+            
+             <div *ngIf="product.isWishlisted">
+                  <mat-icon [class.mat-accent]='product.isWishlisted'>favorite</mat-icon>
+             </div>
+             
+             <div *ngIf="!product.isWishlisted">
+                <mat-icon class="mat-accent"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
+             </div>
+            
+    </button>
     <!--<mat-icon>share</mat-icon>-->
-</mat-card-actions>
+</div>
+
+

@@ -25,4 +25,13 @@ mat-card-actions{
         display: block;
       }
 }
- 
+.mat-close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    overflow: hidden;
+    font-size: 30px;
+    width: auto;
+    height: auto;
+}

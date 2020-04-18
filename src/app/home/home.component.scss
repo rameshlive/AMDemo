@@ -3,7 +3,7 @@
    
 }
 mat-card{
-   padding:16px 16px 25px 16px;
+   padding:0;
 }
 
 .container{
@@ -51,4 +51,12 @@ mat-card{
         }
     } 
   
+}
+
+.flex-items{
+    flex : 0 0 50%;
+    margin-bottom: 20px;
+    .product{
+        padding:15px;
+    }
 }

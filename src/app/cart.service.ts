@@ -27,10 +27,14 @@ export class CartService {
       product['status'] = 1;
 
       this.currentProduct =  this.getWishlistByCurrentUser();
-
       if( this.currentProduct != undefined){
-          this.currentProduct =  [product,...this.currentProduct] 
-          this.item[currentUser] = this.currentProduct;
+          //check if seleted product already exists or not
+          const isExists = this.currentProduct.find( wishlistItem  => wishlistItem.id === product.id );
+
+          if(!isExists){
+              this.currentProduct =  [product,...this.currentProduct] 
+              this.item[currentUser] = this.currentProduct;
+          }
       }else{
           this.currentProduct =  [product] 
           this.item[currentUser] = this.currentProduct;
@@ -40,9 +44,11 @@ export class CartService {
       this.wishlist.next(this.currentProduct.length);
   }
   getTotalWishlistCount():Observable<number>{
-      return this.wishlist.asObservable();
-  }
-  getTotalCount():Observable<number>{
+      let products = JSON.parse(localStorage.getItem('wishlists')) || [];
+      let currentUser = localStorage.getItem('currentUser');
+      products = products[currentUser] !== undefined ? products[currentUser] : [];
+      products.length = products.length ? products.length : 0;
+      this.wishlist.next(products.length);
       return this.wishlist.asObservable();
   }
 
@@ -51,11 +57,16 @@ export class CartService {
   }
 
   getWishlistByCurrentUser():string[]{
-      let products = JSON.parse(localStorage.getItem('wishlists')) || {};
+      let products = JSON.parse(localStorage.getItem('wishlists')) || [];
       let currentUser = localStorage.getItem('currentUser');
-      products = products[currentUser] != undefined ? products[currentUser] : [];
+      products = products[currentUser] !== undefined ? products[currentUser] : [];
+      products.length = products.length ? products.length : 0;
       this.wishlist.next(products.length);
       return products;
+  }
+
+  getCurrentUserproducts(){
+
   }
     
 }
