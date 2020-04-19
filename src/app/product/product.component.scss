@@ -6,6 +6,9 @@
         background: transparent;
         border: 0;
         outline: none;
+        position: absolute;
+        top: 15px;
+        right: 0;
     }
     .favoriteBtn:disabled{
         cursor: auto;
@@ -17,8 +20,6 @@
 }
 
 .example-header-image {
-    //background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    //background-size: cover;
     img{
         height: 40px;
         width: 40px;
@@ -55,11 +56,9 @@
 .img-container{
     display: -webkit-box;
     display: flex;
-    /* -webkit-box-pack: center; */
-    /* justify-content: center; */
     -webkit-box-align: center;
-    /* flex-wrap: wrap; */
     max-height: 260px;
     min-height: 200px;
     align-items: center;
+    padding-top: 15px;
 }

@@ -19,4 +19,12 @@ export class WishlistinfoComponent implements OnInit {
   loadWishlists(){
     this.wishlists = this._cartService.getWishlistByCurrentUser();
   }
+
+  removeAllwishlist(){
+    this.wishlists = this._cartService.removeAllWishlists();
+  }
+
+  removeWishlistById(selectedId : string){
+    this.wishlists = this._cartService.removeWishlistById(selectedId);
+  }
 }

@@ -21,7 +21,7 @@ export class LocalusersstorageService {
           {id:'prod8', name : ' Blend Straight Kurta' , bgColor : '#feb72b',avatar : 'prod8.png'} 
         ]
     
-   }
+  }
 
   getUsers():String[]{
       //Get the users from localstorage
@@ -51,7 +51,7 @@ export class LocalusersstorageService {
             if (!!isExists){
                 element.isWishlisted = true;
             }else{
-                 element.isWishlisted = false;
+                element.isWishlisted = false;
             }
         })
       }

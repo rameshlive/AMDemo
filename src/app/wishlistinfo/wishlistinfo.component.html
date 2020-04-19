@@ -1,23 +1,23 @@
-<div fxLayoutGap="10px" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column"  fxLayout.md="row"
-fxLayoutAlign="center" id="wishlist">
-    <div  *ngIf="wishlists.length; else noproducts">
-        <mat-card class="example-card" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
+    <section *ngIf="wishlists.length;"> 
+      <button mat-raised-button  class="favoriteBtn mat-button mat-accent" #item (click)="removeAllwishlist()" >Remove all</button>
+    </section>
+    <div *ngIf="wishlists.length; else noproducts" fxLayout="row wrap">
+        <mat-card class="example-card flex-items" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
+          <div class="product">
           <div class="img-container">
             <img mat-card-image src="./assets/{{wishlist.id}}.png">
           </div>
           <div class="product-name">
-            <!--<div mat-card-avatar class="example-header-image">
-              <img src="./assets/{{product.id}}.png"/>
-            </div>-->
             <div mat-card-title class="mat-card-tiltle">{{wishlist.name}}</div>
             <div mat-card-subtitle>Dog Breed</div>
           </div>
-          <mat-icon class="mat-close-icon">cancel</mat-icon>
+          <mat-icon class="mat-close-icon" (click)="removeWishlistById(wishlist.id)">cancel</mat-icon>
+        </div>
         </mat-card>
     </div>
     <ng-template #noproducts>
       <h3>Your wishlist is empty!</h3>
     </ng-template>
-</div>
+
 
 
