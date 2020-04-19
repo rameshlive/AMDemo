@@ -1,4 +1,6 @@
-<div class="container">
+
+<ngbd-carousel-basic></ngbd-carousel-basic>
+<!--<div class="container">
   <div class="items item-1">
       <div class="inner">Casuals</div>
   </div>
@@ -9,8 +11,8 @@
     <div class="inner">T-shirts</div>
   </div>
 </div>
-
-<div fxLayout="row wrap">
+-->
+<div fxLayout="row wrap" class="productlist-container">
       <mat-card class="example-card flex-items" *ngFor="let item of items" [style.background]="'#fff'">
         <div class="product">
           <product [product]="item"></product>

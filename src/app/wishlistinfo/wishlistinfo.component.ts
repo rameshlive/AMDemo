@@ -1,6 +1,5 @@
 import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-wishlistinfo',
   templateUrl: './wishlistinfo.component.html',
@@ -8,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishlistinfoComponent implements OnInit {
   wishlists:any = [];
+  imagetype : string = 'shopping_basket';
+  desc : string = "Oops sorry!...your wishlist is empty."
   constructor(
     private _cartService : CartService
   ) { }
