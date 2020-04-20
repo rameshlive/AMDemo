@@ -1,3 +1,4 @@
+import { UserService } from './../user/user.service';
 import { CartService } from './../cart.service';
 import { MessageService } from './../message.service';
 import { BottomsheetComponent } from './../bottomsheet/bottomsheet.component';
@@ -16,8 +17,9 @@ export class NavComponent implements OnInit {
     private _router:Router,
     private _messageService : MessageService,
     private _cartService :CartService,
+    private _userService : UserService,
     private _bottomSheet : MatBottomSheet) {
-      this._messageService.getMessage().subscribe( x => console.log(x))
+      //this._messageService.getMessage().subscribe( x => console.log(x))
       this._cartService.getTotalWishlistCount().subscribe(x => this.wishlistCount = x )
      }
 
@@ -26,12 +28,9 @@ export class NavComponent implements OnInit {
       this.wishlistCount = this.wishlistCount == undefined ? 0 : this.wishlistCount;
   }
 
-  /* Logging out user */
-  logoutUser():void{
-    if(localStorage.getItem('currentUser')){
-       localStorage.removeItem('currentUser');
-       this._router.navigate(['login']);
-    }
+  logout(){
+    this._userService.logOut();
+    this._router.navigate(['login']);
   }
 
   /*Open Theme Switcher*/

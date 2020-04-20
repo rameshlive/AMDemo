@@ -1,8 +1,10 @@
+import { TimeoutComponent } from './timeout/timeout.component';
+import { MatDialog } from '@angular/material';
 import { MessageService } from './message.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Router, NavigationStart,Event, NavigationEnd } from '@angular/router';
 import { UserService } from './user/user.service';
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import {MediaChange,MediaObserver} from '@angular/flex-layout';
 
@@ -16,14 +18,21 @@ import {MediaChange,MediaObserver} from '@angular/flex-layout';
 export class AppComponent implements OnInit,OnDestroy{
   loggedInUser : boolean = false;
   selectedTheme : string;
+  
   constructor(
     private _userService : UserService,
     private _messageService : MessageService,
     private _router:Router,
+    private _timeoutPopup : MatDialog,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
   }
   ngOnInit(): void {
+      this._userService.setUserTimeOut();
+      this._userService.userInactive.subscribe((n) => {
+        let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
+        clearTimeout(this._userService.userActivity);
+      })
       if (localStorage.getItem("themeName") == undefined || localStorage.getItem("themeName") === null) {
           document.body.className = "default-theme";
           this.selectedTheme = "default-theme";
@@ -36,6 +45,18 @@ export class AppComponent implements OnInit,OnDestroy{
           })
       }
   }
+  
   ngOnDestroy(): void {
+
+    this._userService.userInactive.unsubscribe();
   }
+ 
+
+  @HostListener('window:mousemove',['$event'])
+
+  handleMousemove(event: MouseEvent){
+    clearTimeout(this._userService.userActivity);
+    this._userService.setUserTimeOut();
+  }
+
 }

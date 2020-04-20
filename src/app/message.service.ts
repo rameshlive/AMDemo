@@ -9,7 +9,6 @@ export class MessageService {
  
    constructor() {
       //this.updateMessage(localStorage.getItem("themeName"));
-     // console.log(this.getMessage().subscribe( x => console.log(x)))
   }
 
   updateMessage(value : string){

@@ -32,6 +32,7 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { EmptyComponent } from './shared/empty/empty.component';
+import { TimeoutComponent } from './timeout/timeout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +49,15 @@ import { EmptyComponent } from './shared/empty/empty.component';
     RegisterComponent,
     ProductComponent,
     EmptyComponent,
-    NgbdCarouselBasic
+    NgbdCarouselBasic,
+    TimeoutComponent
   ],
   entryComponents:[
     TimerComponent,
     BottomsheetComponent,
     AlertpopupComponent,
-    WishlistinfoComponent
+    WishlistinfoComponent,
+    TimeoutComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class EmptyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.imagetype + ' ' + this.desc)
+    
   }
 
 }

@@ -49,8 +49,8 @@ export class LoginComponent implements OnInit {
     })
 
     /*Check user exists*/
-    const isUserExists = this._userService.isUserExists();
-    if(isUserExists){
+    const isLoggedIn = this._userService.isLoggedIn;
+    if(isLoggedIn){
         this.loggedInUser = true;
         this._router.navigate(['dashboard'])
     }
@@ -75,10 +75,10 @@ export class LoginComponent implements OnInit {
       this.username = this.loginForm.value.username;
       this.password = this.loginForm.value.password;
       if(this.loginForm.valid){
-        this._userService.login(this.username,this.password);
+        let loggedUer = this._userService.login(this.username,this.password);
         /*Check user exists*/
-        const isUserExists = this._userService.isUserExists();
-        if(isUserExists){
+        //const isLoggedIn = this._userService.loggedIn();
+        if(loggedUer){
           this.errorMsg = "";
           this.openSnackbar();
         }else{

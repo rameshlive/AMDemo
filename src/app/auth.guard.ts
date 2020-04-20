@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if(this._userService.isUserExists()){
+    if(this._userService.isLoggedIn){
       return true;
     }else{
       let alertDialogRef = this._alertPopup.open(AlertpopupComponent);
