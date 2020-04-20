@@ -18,6 +18,7 @@ import {MediaChange,MediaObserver} from '@angular/flex-layout';
 export class AppComponent implements OnInit,OnDestroy{
   loggedInUser : boolean = false;
   selectedTheme : string;
+  items :any;
   
   constructor(
     private _userService : UserService,
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit,OnDestroy{
       this._mediaObserver.media$.subscribe();
   }
   ngOnInit(): void {
-      this._userService.setUserTimeOut();
+      this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
         let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
         clearTimeout(this._userService.userActivity);
@@ -44,11 +45,13 @@ export class AppComponent implements OnInit,OnDestroy{
             document.body.className = x.toString() + '-theme';
           })
       }
+
+      
   }
   
   ngOnDestroy(): void {
 
-    this._userService.userInactive.unsubscribe();
+    //this._userService.userInactive.unsubscribe();
   }
  
 

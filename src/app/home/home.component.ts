@@ -19,12 +19,11 @@ export class HomeComponent implements OnInit {
   items: any[];
   
   constructor(
-    private _cartService:CartService,
-    private _productService : LocalusersstorageService) {
+    private _cartService:CartService) {
       
   }
   ngOnInit() {
-    this.items = this._productService.getProducts();
+    this.items = this._cartService.getProducts();
   }
 
 }

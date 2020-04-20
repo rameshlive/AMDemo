@@ -14,7 +14,7 @@
     <button mat-raised-button color="accent">SHARE</button>--->
     <div fxFlex></div>
     <button class="favoriteBtn" #item 
-            [disabled]="selectedItem == product.id" 
+            [disabled]="product.isWishlisted || selectedItem == product.id" 
             (click)="addToWishlist(product.id,product.name)">
             
              <div *ngIf="product.isWishlisted">

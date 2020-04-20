@@ -1,6 +1,6 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 Observable    
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,7 @@ export class UserService {
   ) {
      this.isLoggedIn = localStorage.getItem('currentUser') ? true : false;
   }
+  
 
   login(username:string,password:string):boolean{
     this.user =  JSON.parse(localStorage.getItem("users")) || [];
@@ -39,6 +40,7 @@ export class UserService {
   logOut():void{
       if(localStorage.getItem('currentUser')){
           localStorage.removeItem('currentUser');
+          this._router.navigate(['login'])
           this.isLoggedIn = false;
       }
   }
@@ -50,10 +52,10 @@ export class UserService {
   }
 
   setUserTimeOut(){
-    this.userActivity = setTimeout(() => {
-        if (this.isLoggedIn) {
-            this.userInactive.next(undefined);
-        }
-    },180000)
+      this.userActivity = setTimeout(() => {
+          if (this.isLoggedIn) {
+              this.userInactive.next(undefined);
+          }
+      },12000)
   }
 }
