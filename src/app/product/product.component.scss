@@ -1,7 +1,4 @@
-.mat-card-actions{
-    align-items: center;
-    margin-bottom: 0;
-    margin:0;
+
     .favoriteBtn{
         background: transparent;
         border: 0;
@@ -17,7 +14,6 @@
         margin: 0 5px;
         cursor: pointer;
     }
-}
 
 .example-header-image {
     img{
@@ -41,17 +37,19 @@
     margin: 10px auto;
     max-width: 100%;
 }
-
+.product-name{
+    margin-top:20px;
+}
 .mat-card-tiltle{
-    font-size: 11px;
+    font-size: 10px;
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 .mat-card-subtitle {
     display: block;
-    margin-bottom: 16px;
     font-size: 10px;
+    margin-bottom: 0;
 }
 .img-container{
     display: -webkit-box;

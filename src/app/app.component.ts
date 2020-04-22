@@ -19,6 +19,7 @@ export class AppComponent implements OnInit,OnDestroy{
   loggedInUser : boolean = false;
   selectedTheme : string;
   items :any;
+  starColor = "accent";
   
   constructor(
     private _userService : UserService,

@@ -1,0 +1,5 @@
+
+<button mat-icon-button *ngFor="let star of starArray; let i=index" [color]="color" [ngStyle]="currentStyles"
+   (click)="updateRating(i)">
+    <mat-icon [ngStyle]="currentStyles">{{ showIcon(i) }} </mat-icon>
+</button>

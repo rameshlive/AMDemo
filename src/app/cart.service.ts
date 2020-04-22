@@ -132,7 +132,6 @@ export class CartService {
         wishlists = wishlists[currentUser];
         
         if( wishlists != undefined ){
-            console.log("fdaasda");
             this.products.map(function(element){
                 let isExists = wishlists.find(wishlist => wishlist.id == element.id);
                 if (!!isExists){

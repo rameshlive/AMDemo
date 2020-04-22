@@ -30,13 +30,13 @@ export class UserService {
     return false;
   }
   
-  /* Check if User Logged in or Not using LocaL Storage*/
+  /* Check if the user logged in or not */
   loggedIn():boolean{
       this.isLoggedIn = localStorage.getItem('currentUser') ? true : false;
       return this.isLoggedIn;
   }
 
-  /* Logging out user */
+  /* Logging out the user */
   logOut():void{
       if(localStorage.getItem('currentUser')){
           localStorage.removeItem('currentUser');
@@ -45,6 +45,7 @@ export class UserService {
       }
   }
 
+  /* get current user*/
   currentUser():boolean{
     if(localStorage.getItem('currentUser')){
       return JSON.parse(localStorage.getItem('currentUser'));
@@ -56,6 +57,6 @@ export class UserService {
           if (this.isLoggedIn) {
               this.userInactive.next(undefined);
           }
-      },12000)
+      },300000)
   }
 }

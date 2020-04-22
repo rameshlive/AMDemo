@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
     
     this.selectedItem = id;
     productname = `${productname} added to your wishlist!`;
-    this._wishlistSnack.open(productname, "Close", {
+    this._wishlistSnack.open(productname, "", {
       duration: 2000,
       verticalPosition: 'top'
     });

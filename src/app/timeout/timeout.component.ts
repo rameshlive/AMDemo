@@ -25,8 +25,8 @@ export class TimeoutComponent implements OnInit {
   ngOnInit() {
     this.loadObservable();
     this.subscriberone = this.count$.subscribe(
-      (x) => {this.count = x;console.log(x)},
-      err => console.error('Observer got an error: ' + err),
+      (x) => {this.count = x;},
+      err => {},
       () => {
         this.dialogRef.close();
         this._userService.logOut();
@@ -43,7 +43,6 @@ export class TimeoutComponent implements OnInit {
 
   onYesClick(){
       this.dialogRef.close();
-      console.log("onYesClick");
       this.subscriberone.unsubscribe();
   }
 

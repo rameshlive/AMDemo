@@ -33,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { EmptyComponent } from './shared/empty/empty.component';
 import { TimeoutComponent } from './timeout/timeout.component';
+import { StarratingComponent } from './components/shared/starrating/starrating.component';
+import { SnackbarComponent } from './components/shared/snackbar/snackbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,9 @@ import { TimeoutComponent } from './timeout/timeout.component';
     ProductComponent,
     EmptyComponent,
     NgbdCarouselBasic,
-    TimeoutComponent
+    TimeoutComponent,
+    StarratingComponent,
+    SnackbarComponent
   ],
   entryComponents:[
     TimerComponent,

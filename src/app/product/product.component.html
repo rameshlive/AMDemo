@@ -8,11 +8,9 @@
     </div>-->
     <div mat-card-title class="mat-card-tiltle">{{product.name}}</div>
     <div mat-card-subtitle>Dog Breed</div>
+    <custom-starrating [color]="'primary'" [star]="5"></custom-starrating>
   </div>
-  <div mat-card-actions class="mat-card-actions"> 
-    <!--<button mat-raised-button color="primary">BUY</button>
-    <button mat-raised-button color="accent">SHARE</button>--->
-    <div fxFlex></div>
+
     <button class="favoriteBtn" #item 
             [disabled]="product.isWishlisted || selectedItem == product.id" 
             (click)="addToWishlist(product.id,product.name)">
@@ -26,7 +24,5 @@
              </div>
             
     </button>
-    <!--<mat-icon>share</mat-icon>-->
-</div>
 
 
