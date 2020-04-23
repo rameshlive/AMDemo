@@ -1,3 +1,4 @@
+import { RoutereventsService } from './../services/shared/routerevents.service';
 import { Observable } from 'rxjs';
 import { UserService } from './../user/user.service';
 import { TimerComponent } from '../timer/timer.component';
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
+    private _routereventsService : RoutereventsService,
     private _router:Router,
     private _userService : UserService,
     private _spinner: NgxSpinnerService
@@ -35,12 +37,21 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    /* Loading Indicator for Login Component */
-    this._spinner.show();
-    setTimeout(() => {
-      this._spinner.hide();
-      this.showPage = true;
-    }, 3000);
+    /*get Previous url*/
+
+    let previousUrl =  this._routereventsService.getPreviousUrl();
+    
+
+    if(previousUrl == '/'){
+        /* Loading Indicator for Login Component */
+        this._spinner.show();
+        setTimeout(() => {
+            this._spinner.hide();
+            this.showPage = true;
+        }, 3000);
+    }
+
+    this.showPage = true; 
       
     /* Set validation */
     this.loginForm =  this.formBuilder.group({
@@ -80,7 +91,8 @@ export class LoginComponent implements OnInit {
         //const isLoggedIn = this._userService.loggedIn();
         if(loggedUer){
           this.errorMsg = "";
-          this.openSnackbar();
+          //this.openSnackbar();
+          this._router.navigate(['dashboard']);
         }else{
             this.errorMsg = "Invalid Username or Password ";
         }

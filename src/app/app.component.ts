@@ -1,3 +1,4 @@
+import { RoutereventsService } from './services/shared/routerevents.service';
 import { TimeoutComponent } from './timeout/timeout.component';
 import { MatDialog } from '@angular/material';
 import { MessageService } from './message.service';
@@ -24,12 +25,15 @@ export class AppComponent implements OnInit,OnDestroy{
   constructor(
     private _userService : UserService,
     private _messageService : MessageService,
+    private _routereventsService : RoutereventsService,
     private _router:Router,
     private _timeoutPopup : MatDialog,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
   }
   ngOnInit(): void {
+
+      
       this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
         let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);

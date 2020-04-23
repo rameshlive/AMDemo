@@ -8,7 +8,13 @@
     </div>-->
     <div mat-card-title class="mat-card-tiltle">{{product.name}}</div>
     <div mat-card-subtitle>Dog Breed</div>
-    <custom-starrating [color]="'primary'" [star]="5"></custom-starrating>
+    <div class="container">
+      <div class="row rating-container">
+        <div class="rating btns"> <custom-starrating [color]="'primary'" [star]="5"></custom-starrating></div>
+        <div class="likes btns"> <custom-like [color]="'primary'" [inputStyle]="'18px'"></custom-like></div>
+      </div>
+    </div>
+
   </div>
 
     <button class="favoriteBtn" #item 

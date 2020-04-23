@@ -35,6 +35,7 @@ import { EmptyComponent } from './shared/empty/empty.component';
 import { TimeoutComponent } from './timeout/timeout.component';
 import { StarratingComponent } from './components/shared/starrating/starrating.component';
 import { SnackbarComponent } from './components/shared/snackbar/snackbar.component';
+import { LikeComponent } from './components/shared/like/like.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { SnackbarComponent } from './components/shared/snackbar/snackbar.compone
     NgbdCarouselBasic,
     TimeoutComponent,
     StarratingComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    LikeComponent
   ],
   entryComponents:[
     TimerComponent,

@@ -60,3 +60,10 @@
     align-items: center;
     padding-top: 15px;
 }
+.menu-spacer {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+.rating-container{
+    justify-content: space-between;
+}
