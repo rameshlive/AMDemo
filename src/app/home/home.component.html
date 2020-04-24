@@ -1,23 +1,23 @@
-<div class="homeslider">
+<!-- <div class="homeslider">
     <ngbd-carousel-basic></ngbd-carousel-basic>
-</div>
+</div> -->
 
-<!--<div class="container">
-  <div class="items item-1">
-      <div class="inner">Casuals</div>
+<!-- <div class="container p-0">
+  <div class="row">
+    <div class="col-md-12">
+      <ngbd-carousel-basic></ngbd-carousel-basic>
+    </div>
   </div>
-  <div class="items item-2">
-    <div class="inner">Formals</div>
+</div> -->
+<ngbd-carousel-basic></ngbd-carousel-basic>
+<div class="product-list mt-4">
+  <div class="container pn">
+    <div class="row mn">
+      <div class="col pn" *ngFor="let item of items" [style.background]="'#fff'">
+          <div class="product">
+            <product [product]="item"></product>
+          </div>
+      </div>
+    </div>
   </div>
-  <div class="items item-3">
-    <div class="inner">T-shirts</div>
-  </div>
-</div>
--->
-<div fxLayout="row wrap" class="productlist-container">
-      <mat-card class="example-card flex-items" *ngFor="let item of items" [style.background]="'#fff'">
-        <div class="product">
-          <product [product]="item"></product>
-        </div>
-      </mat-card>
 </div>

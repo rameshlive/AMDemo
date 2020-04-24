@@ -1,4 +1,10 @@
-
+<ngx-spinner 
+    bdColor="rgba(0,0,0,1)"
+    size="medium"
+    color="#ff4081"
+    type="square-spin">
+    <p style="font-size: 12px; color: white">Loading...</p>
+</ngx-spinner>
     <div class="login-container" *ngIf="showPage">
         <mat-card class="example-card">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -25,7 +31,7 @@
                   <p *ngIf="!!errorMsg"  [class]="'error'">
                    <i class="material-icons"> error </i>{{ errorMsg }}
                   </p>
-                  </mat-error>
+                </mat-error>
                   
             </mat-card-content>
             <mat-card-actions>
@@ -37,7 +43,7 @@
             </mat-card-actions>
           </form>
           </mat-card>
-    </div>
+</div>
  
 
   

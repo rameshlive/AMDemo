@@ -10,60 +10,34 @@
     .favoriteBtn:disabled{
         cursor: auto;
     }
-    mat-icon{
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-.example-header-image {
-    img{
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        flex-shrink: 0;
-        object-fit: cover;
-    }
-    .mat-card-header {
-        margin: 0 !important;
-    }
-
-  }
-  .mat-card-image{
-    width: auto;
-    margin: 0 -16px 16px -16px;
-    max-height: 165px;
-    text-align: center;
-    display: block;
-    margin: 10px auto;
-    max-width: 100%;
-}
-.product-name{
-    margin-top:20px;
-}
-.mat-card-tiltle{
-    font-size: 10px;
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-.mat-card-subtitle {
-    display: block;
-    font-size: 10px;
-    margin-bottom: 0;
-}
-.img-container{
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    max-height: 260px;
-    min-height: 200px;
-    align-items: center;
-    padding-top: 15px;
-}
+   
 .menu-spacer {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
 }
 .rating-container{
     justify-content: space-between;
+    align-items: center;
+}
+.card{
+    .card-body {
+        padding: 1rem 0.75rem;
+        .card-title {
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            min-height: 32px;
+            line-height: 1.4;
+    
+            a{
+                color:#313030;
+            }
+        }
+        
+    }
+    .card-footer {
+        padding: 0.75rem 0.75rem;
+    }
+}
+.mb-15{
+    margin-bottom:15px;
 }

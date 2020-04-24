@@ -24,10 +24,10 @@ export class StarratingComponent implements OnInit {
     }
 
     this.currentStyles = {     
-      'width':  this.starStyle  ? this.starStyle : '14px',  
-      'height':  this.starStyle ? this.starStyle : '14px',      
-      'line-height':  this.starStyle ? this.starStyle : '14px',
-      'font-size': this.starStyle ? this.starStyle : '14px'    
+      'width':  this.starStyle  ? this.starStyle : '16px',  
+      'height':  this.starStyle ? this.starStyle : '16px',      
+      'line-height':  this.starStyle ? this.starStyle : '16px',
+      'font-size': this.starStyle ? this.starStyle : '16px'    
     };
 
   }

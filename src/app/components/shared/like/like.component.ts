@@ -28,7 +28,7 @@ export class LikeComponent implements OnInit {
   }
 
   onSubmit(){
-     this.likebtn == 'thumb_up' ? this.thumbDown() : this.thumbUp();
+     this.likebtn == 'thumb_up_alt' ? this.thumbDown() : this.thumbUp();
     
      this._snackbar.open(`You ${this.liketext} this product`,"",{
        duration : 1000
@@ -36,12 +36,12 @@ export class LikeComponent implements OnInit {
   }
 
   thumbDown(){
-      this.likebtn = 'thumb_down';
+      this.likebtn = 'thumb_down_alt';
       this.liketext = 'Liked';
   }
 
   thumbUp(){
-      this.likebtn = 'thumb_up';
+      this.likebtn = 'thumb_up_alt';
       this.liketext = 'disLiked';
   }
 

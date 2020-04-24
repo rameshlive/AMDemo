@@ -1,34 +1,64 @@
 
-  <div class="img-container">
+  <!-- <div class="img-container">
     <img mat-card-image src="./assets/{{product.id}}.png">
   </div>
   <div class="product-name">
-    <!--<div mat-card-avatar class="example-header-image">
+    <<div mat-card-avatar class="example-header-image">
       <img src="./assets/{{product.id}}.png"/>
-    </div>-->
+    </div>
     <div mat-card-title class="mat-card-tiltle">{{product.name}}</div>
     <div mat-card-subtitle>Dog Breed</div>
-    <div class="container">
-      <div class="row rating-container">
-        <div class="rating btns"> <custom-starrating [color]="'primary'" [star]="5"></custom-starrating></div>
-        <div class="likes btns"> <custom-like [color]="'primary'" [inputStyle]="'18px'"></custom-like></div>
-      </div>
+  
+  </div> -->
+
+ 
+
+
+
+
+    <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="./assets/{{product.id}}.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{product.name}}</a>
+          </h4>
+          <h6 class="mn">$24.99</h6>
+          <custom-starrating [color]="'accent'" [star]="5"></custom-starrating>
+          
+          <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p> -->
+        </div>
+        <div class="card-footer shadow bg-white">
+          <div class="container">
+            <div class="row rating-container">
+                <custom-like [color]="'primary'" [inputStyle]="'24px'"></custom-like>
+                <!-- <button mat-icon-button>
+                    <mat-icon>favorite_border </mat-icon>
+                </button> -->
+                <button mat-icon-button  #item 
+                          [disabled]="product.isWishlisted || selectedItem == product.id" 
+                          (click)="addToWishlist(product.id,product.name)" [ngStyle]="btnStyles">
+                      <div *ngIf="product.isWishlisted">
+                            <mat-icon [ngStyle]="btnStyles" [class.mat-primary]='product.isWishlisted'>favorite</mat-icon>
+                      </div>
+                      <div *ngIf="!product.isWishlisted">
+                          <mat-icon class="mat-primary" [ngStyle]="btnStyles"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
+                      </div>
+                  </button> 
+                <custom-addtocart [color]="'primary'" [inputStyle]="'24px'"></custom-addtocart>
+
+                <!-- <button class="favoriteBtn" #item 
+                          [disabled]="product.isWishlisted || selectedItem == product.id" 
+                          (click)="addToWishlist(product.id,product.name)">
+                      <div *ngIf="product.isWishlisted">
+                            <mat-icon [class.mat-accent]='product.isWishlisted'>favorite</mat-icon>
+                      </div>
+                      <div *ngIf="!product.isWishlisted">
+                          <mat-icon class="mat-accent"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
+                      </div>
+                  </button> -->
+            </div>
+          </div>
+        </div>
     </div>
-
-  </div>
-
-    <button class="favoriteBtn" #item 
-            [disabled]="product.isWishlisted || selectedItem == product.id" 
-            (click)="addToWishlist(product.id,product.name)">
-            
-             <div *ngIf="product.isWishlisted">
-                  <mat-icon [class.mat-accent]='product.isWishlisted'>favorite</mat-icon>
-             </div>
-             
-             <div *ngIf="!product.isWishlisted">
-                <mat-icon class="mat-accent"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
-             </div>
-            
-    </button>
 
 

@@ -21,6 +21,7 @@ export class AppComponent implements OnInit,OnDestroy{
   selectedTheme : string;
   items :any;
   starColor = "accent";
+  showLoader : boolean = false;
   
   constructor(
     private _userService : UserService,
@@ -31,20 +32,32 @@ export class AppComponent implements OnInit,OnDestroy{
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
   }
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+      this._router.events.subscribe((routerEvent : Event) => {
+          if( routerEvent instanceof NavigationStart){
+              this.showLoader = true;
+              console.log(this.showLoader)
+          }
+          if ( routerEvent instanceof NavigationEnd){
+               this.showLoader = false;
+               console.log(this.showLoader)
+          }
+      })
       
+
       this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
-        let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
-        clearTimeout(this._userService.userActivity);
+          let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
+          clearTimeout(this._userService.userActivity);
       })
-      if (localStorage.getItem("themeName") == undefined || localStorage.getItem("themeName") === null) {
+      let themeName = localStorage.getItem("themeName");
+      if (themeName == undefined || themeName === null) {
           document.body.className = "default-theme";
           this.selectedTheme = "default-theme";
       }else{
-          this.selectedTheme  = localStorage.getItem("themeName") + '-theme';
-          document.body.className = localStorage.getItem("themeName") + '-theme';
+          this.selectedTheme  = themeName + '-theme';
+          document.body.className = themeName + '-theme';
           this._messageService.getMessage().subscribe(x => {
             this.selectedTheme = x.toString() + '-theme';
             document.body.className = x.toString() + '-theme';

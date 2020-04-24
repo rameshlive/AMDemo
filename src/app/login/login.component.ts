@@ -5,7 +5,7 @@ import { TimerComponent } from '../timer/timer.component';
 import { Component,OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 Observable
 @Component({
@@ -14,7 +14,6 @@ Observable
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  showPage : boolean = false;
   loginForm : FormGroup;
   hide:boolean = true;
   submitted:boolean = false;
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
   password:string;
   errorMsg : string;
   loggedInUser : boolean = false;
-  
+  showPage :boolean = true;
   constructor(
     private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
@@ -38,10 +37,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     /*get Previous url*/
-
     let previousUrl =  this._routereventsService.getPreviousUrl();
     
-
     if(previousUrl == '/'){
         /* Loading Indicator for Login Component */
         this._spinner.show();
@@ -52,12 +49,14 @@ export class LoginComponent implements OnInit {
     }
 
     this.showPage = true; 
-      
+
     /* Set validation */
     this.loginForm =  this.formBuilder.group({
       username : ['',Validators.required],
       password:['',[Validators.required, Validators.minLength(6)]]
     })
+
+
 
     /*Check user exists*/
     const isLoggedIn = this._userService.isLoggedIn;

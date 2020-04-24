@@ -36,6 +36,8 @@ import { TimeoutComponent } from './timeout/timeout.component';
 import { StarratingComponent } from './components/shared/starrating/starrating.component';
 import { SnackbarComponent } from './components/shared/snackbar/snackbar.component';
 import { LikeComponent } from './components/shared/like/like.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
+import { AddtocartComponent } from './components/shared/addtocart/addtocart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,9 @@ import { LikeComponent } from './components/shared/like/like.component';
     TimeoutComponent,
     StarratingComponent,
     SnackbarComponent,
-    LikeComponent
+    LikeComponent,
+    LoaderComponent,
+    AddtocartComponent
   ],
   entryComponents:[
     TimerComponent,
