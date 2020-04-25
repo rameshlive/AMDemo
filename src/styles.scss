@@ -26,3 +26,7 @@ input:-webkit-autofill:active  {
 }
 
 .mn{margin:0}
+button:focus {
+    outline: 1px dotted;
+    outline: none;
+}

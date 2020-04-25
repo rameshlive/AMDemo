@@ -30,9 +30,9 @@ export class FavouriteComponent implements OnInit {
     this.product = this.currentProduct;
   }
 
-  addToWishtlist(id:string){
+  addToWishtlist(id:string,productname:string){
       this.selectedItem = id;
-      this.valueChange.emit({id: "1",name:"prod1"})
+      this.valueChange.emit({id: id,name:productname})
   }
 
 }

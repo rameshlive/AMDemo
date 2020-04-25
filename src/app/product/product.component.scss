@@ -21,13 +21,17 @@
 }
 .card{
     .card-body {
-        padding: 1rem 0.75rem;
+        padding: 0.75rem 0.5rem;
         .card-title {
             margin-bottom: 0.75rem;
-            font-size: 0.75rem;
-            min-height: 32px;
+            font-size: 0.65rem;
+            /* min-height: 32px; */
             line-height: 1.4;
-    
+            font-weight: normal;
+            h6 {
+                font-size: 0.75rem;
+                font-weight: normal;
+            }
             a{
                 color:#313030;
             }
@@ -38,7 +42,8 @@
         
     }
     .card-footer {
-        padding: 0.75rem 0.75rem;
+        padding: 0.5rem 0.75rem;
+        background: #f3f3f3;
     }
 }
 .mb-15{

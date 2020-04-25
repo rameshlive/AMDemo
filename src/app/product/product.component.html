@@ -32,7 +32,7 @@
 </button>  -->
         <p class="card-text mt-2" *ngIf="closeIcon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="card-footer shadow bg-white" *ngIf="!closeIcon">
+        <div class="card-footer shadow" *ngIf="!closeIcon">
           <div class="container">
             <div class="row rating-container">
                 <custom-like [color]="'primary'"  [inputStyle]="'20px'"></custom-like>
@@ -45,7 +45,7 @@
         <div class="card-footer shadow bg-white" *ngIf="closeIcon">
           <div class="container">
             <div class="row flex-end">
-                <button mat-flat-button color="primary">Remove</button>
+                <button mat-flat-button color="primary" (click)="removeItem(product.id)">Remove</button>
             </div>
           </div>
         </div>

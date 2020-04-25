@@ -32,7 +32,7 @@
       <div class="row mn">
             <div class="col pn" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
                 <div class="product">
-                  <product [closeIcon] ='true'[product]="wishlist"></product>
+                  <product [closeIcon] ='true' (removewishlist)="removeWishlistById($event)"  [product]="wishlist"></product>
                 </div>
             </div>
         </div>

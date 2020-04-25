@@ -1,7 +1,7 @@
 import { item } from './../home/home.component';
 import { MessageService } from './../message.service';
 import { CartService } from './../cart.service';
-import { Component, OnInit, Input, ViewChild, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, QueryList, ViewChildren, Output, EventEmitter } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -14,19 +14,24 @@ export class ProductComponent implements OnInit {
   selectedItem : string;
   @Input('closeIcon') closeIcon;
   btnStyles;
+  @Output() removewishlist = new  EventEmitter();
   constructor(
     private _wishlistSnack : MatSnackBar,
     private _CartService :CartService
-    ) { }
+    ) { 
+     
+    }
 
   ngOnInit() {
     this.btnStyles = {
-      'width' : '24px',
-      'height' : '24px',
-      'line-height' : '24px',
-      'font-size' : '24px',
+      'width' : '20px',
+      'height' : '20px',
+      'line-height' : '20px',
+      'font-size' : '20px',
       'color': 'primary'
     }
+
+   
   }
 
   addToWishlist(product,selectedProduct){
@@ -39,14 +44,8 @@ export class ProductComponent implements OnInit {
     }); 
 
   }
- /*  addToWishlist(id:string,productname: string) {
-    this._CartService.addToWishlist(this.product);
-    
-    this.selectedItem = id;
-    productname = `${productname} added to your wishlist!`;
-    this._wishlistSnack.open(productname, "", {
-      duration: 2000,
-      verticalPosition: 'top'
-    });
-  } */
+
+  removeItem(selectedId : string){
+     this.removewishlist.emit(selectedId)
+  }
 }
