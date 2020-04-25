@@ -11,8 +11,8 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ProductComponent implements OnInit {
   @Input() product: any;
-  @ViewChildren('item') favicons: QueryList<any>;
   selectedItem : string;
+  @Input('closeIcon') closeIcon;
   btnStyles;
   constructor(
     private _wishlistSnack : MatSnackBar,
@@ -28,7 +28,18 @@ export class ProductComponent implements OnInit {
       'color': 'primary'
     }
   }
-  addToWishlist(id:string,productname: string) {
+
+  addToWishlist(product,selectedProduct){
+    this._CartService.addToWishlist(selectedProduct);
+    //this.selectedItem = id;
+    let productname = `${product.name} added to your wishlist!`;
+    this._wishlistSnack.open(productname, "", {
+      duration: 2000,
+      verticalPosition: 'top'
+    }); 
+
+  }
+ /*  addToWishlist(id:string,productname: string) {
     this._CartService.addToWishlist(this.product);
     
     this.selectedItem = id;
@@ -37,5 +48,5 @@ export class ProductComponent implements OnInit {
       duration: 2000,
       verticalPosition: 'top'
     });
-  }
+  } */
 }

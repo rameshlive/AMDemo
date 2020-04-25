@@ -21,7 +21,7 @@ export class AppComponent implements OnInit,OnDestroy{
   selectedTheme : string;
   items :any;
   starColor = "accent";
-  showLoader : boolean = false;
+  showLoader;
   
   constructor(
     private _userService : UserService,
@@ -31,21 +31,12 @@ export class AppComponent implements OnInit,OnDestroy{
     private _timeoutPopup : MatDialog,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
+    
   }
 
   ngOnInit(): void {
-      this._router.events.subscribe((routerEvent : Event) => {
-          if( routerEvent instanceof NavigationStart){
-              this.showLoader = true;
-              console.log(this.showLoader)
-          }
-          if ( routerEvent instanceof NavigationEnd){
-               this.showLoader = false;
-               console.log(this.showLoader)
-          }
-      })
-      
-
+     
+    
       this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
           let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);

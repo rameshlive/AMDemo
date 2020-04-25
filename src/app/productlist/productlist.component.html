@@ -1,0 +1,11 @@
+<div class="product-list mt-4">
+    <div class="container pn">
+      <div class="row mn">
+        <div class="col pn" *ngFor="let item of items" [style.background]="'#fff'">
+            <div class="product">
+              <product [product]="item"></product>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

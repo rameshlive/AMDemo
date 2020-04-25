@@ -24,42 +24,24 @@ export class CartService {
     constructor(private _userService : UserService) { 
         this.wishlistProdcuts = this.getWishlistByCurrentUser();
         this.wishlist.next(this.wishlistProdcuts.length);
-
-        if(localStorage.getItem('products')){
-            this.products = JSON.parse(localStorage.getItem('products'))
-        }else{
-            this.products = [
+        this.products = [
                 {id:'prod1', name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod1.jpg'},
                 {id:'prod2', name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod2.jpg'},
                 {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
                 {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
                 {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
                 {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} ,
-                {id:'prod7', name : '1734WL01 Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod1.jpg'} ,
-                {id:'prod2', name : ' Blend Straight Kurta' , bgColor : '#feb72b',avatar : 'prod2.jpg'},
-                {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
-                {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
-                {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
-                {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} ,
-                {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
-                {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
-                {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
-                {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} ,
-                {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
-                {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
-                {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
-                {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} ,
-                {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
-                {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
-                {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
-                {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} ,
-                {id:'prod3', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg'},
-                {id:'prod4', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg'} ,
-                {id:'prod5', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg'} ,
-                {id:'prod6', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg'} 
+                {id:'prod7', name : '1734WL01 Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod7.jpg'}, 
+                {id:'prod8', name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod8.jpg'},
+                {id:'prod9', name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod9.jpg'},
+                {id:'prod10', name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod10.jpg'},
+                {id:'prod11', name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod11.jpg'} ,
+                {id:'prod12', name : 'Women Multicolor Heels Sandal' , bgColor : '#feb72b',avatar : 'prod12.jpg'} ,
+                {id:'prod13', name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod13.jpg'} ,
+                {id:'prod14', name : '1734WL01 Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod14.jpg'} 
             ]
             localStorage.setItem('products',JSON.stringify(this.products));
-        }
+        
         this.productSubject.next(this.products)
     }
     

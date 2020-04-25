@@ -16,14 +16,14 @@ export interface item{
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  items: any[];
+  
   
   constructor(
-    private _cartService:CartService) {
+    ) {
       
   }
   ngOnInit() {
-    this.items = this._cartService.getProducts();
+    
   }
 
 }

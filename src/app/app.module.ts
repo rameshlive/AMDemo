@@ -38,6 +38,8 @@ import { SnackbarComponent } from './components/shared/snackbar/snackbar.compone
 import { LikeComponent } from './components/shared/like/like.component';
 import { LoaderComponent } from './components/shared/loader/loader.component';
 import { AddtocartComponent } from './components/shared/addtocart/addtocart.component';
+import { FavouriteComponent } from './components/shared/favourite/favourite.component';
+import { ProductlistComponent } from './productlist/productlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +62,9 @@ import { AddtocartComponent } from './components/shared/addtocart/addtocart.comp
     SnackbarComponent,
     LikeComponent,
     LoaderComponent,
-    AddtocartComponent
+    AddtocartComponent,
+    FavouriteComponent,
+    ProductlistComponent
   ],
   entryComponents:[
     TimerComponent,

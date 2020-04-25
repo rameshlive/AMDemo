@@ -1,24 +1,45 @@
-    <section *ngIf="wishlists.length;"> 
-      <button mat-raised-button  class="favoriteBtn mat-button mat-accent" #item (click)="removeAllwishlist()" >Remove all</button>
-    </section>
-    <div *ngIf="wishlists.length; else noproducts" fxLayout="row wrap">
+  
+   <!--  <div *ngIf="wishlists.length; else noproducts" fxLayout="row wrap">
         <mat-card class="example-card flex-items" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
           <div class="product">
           <div class="img-container">
-            <img mat-card-image src="./assets/{{wishlist.id}}.png">
+            <img mat-card-image src="./assets/{{wishlist.id}}.jpg">
           </div>
           <div class="product-name">
             <div mat-card-title class="mat-card-tiltle">{{wishlist.name}}</div>
             <div mat-card-subtitle>Dog Breed</div>
           </div>
-          <mat-icon class="mat-close-icon" (click)="removeWishlistById(wishlist.id)">cancel</mat-icon>
+         
         </div>
         </mat-card>
     </div>
+
     <ng-template #noproducts>
-      
+      <wishlist-empty [imagetype]="imagetype" [desc]="desc"></wishlist-empty>
+    </ng-template> -->
+
+<div class="product-list mt-4">
+  <div *ngIf="wishlists.length; else noproducts">
+    <div class="container">
+      <div class="row flex-end ">
+          <section *ngIf="wishlists.length;" class="p-2"> 
+            <button mat-raised-button  class="favoriteBtn mat-button mat-accent" (click)="removeAllwishlist()" >Remove all</button>
+          </section>
+    </div>
+
+    </div>
+    <div class="container pn">
+      <div class="row mn">
+            <div class="col pn" *ngFor="let wishlist of wishlists" [style.background]="'#fff'">
+                <div class="product">
+                  <product [closeIcon] ='true'[product]="wishlist"></product>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noproducts>
       <wishlist-empty [imagetype]="imagetype" [desc]="desc"></wishlist-empty>
     </ng-template>
-
-
+  </div>
 

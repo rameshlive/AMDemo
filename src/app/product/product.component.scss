@@ -32,6 +32,9 @@
                 color:#313030;
             }
         }
+        .card-text{
+            font-size: 0.75rem;
+        }
         
     }
     .card-footer {
@@ -40,4 +43,14 @@
 }
 .mb-15{
     margin-bottom:15px;
+}
+
+.closeicon{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #686868;
+}
+.flex-end {
+    justify-content: flex-end;
 }

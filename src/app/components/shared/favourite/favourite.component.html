@@ -1,0 +1,17 @@
+<!-- <button mat-icon-button  #item 
+        [disabled]="product.isWishlisted || selectedItem == product.id" 
+        (click)="addToWishlist(product.id,product.name)" [ngStyle]="btnStyles">
+        <div *ngIf="product.isWishlisted">
+            <mat-icon [ngStyle]="btnStyles" [class.mat-primary]='product.isWishlisted'>favorite</mat-icon>
+        </div>
+        <div *ngIf="!product.isWishlisted">
+            <mat-icon class="mat-primary" [ngStyle]="btnStyles"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </div>
+</button>  -->
+
+<button mat-icon-button  #item [ngStyle]="btnStyles"
+         (click)="addToWishtlist(product.id)"
+         [disabled] = "product.isWishlisted || selectedItem == product.id">
+         <mat-icon  *ngIf="product.isWishlisted"  [ngStyle]="btnStyles" [color]="color">favorite</mat-icon>
+         <mat-icon  *ngIf="!product.isWishlisted"  [ngStyle]="btnStyles" [color]="color">{{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
+</button> 
