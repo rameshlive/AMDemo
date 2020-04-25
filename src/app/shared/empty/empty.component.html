@@ -1,4 +1,6 @@
 <div class="empty-wishlist">
-    <mat-icon class="empty-icon">{{imagetype}}</mat-icon>
-    <h3>{{desc}}</h3>
-</div>
+    <mat-icon color="accent" class="empty-icon">{{imagetype}}</mat-icon>
+    <h3 color="primary">{{message}}</h3>
+    <p>{{desc}}</p>
+    <button class="custom-btn" mat-flat-button color="primary" (click)="continueBtn()">  {{ btnText | uppercase }}</button>
+</div> 

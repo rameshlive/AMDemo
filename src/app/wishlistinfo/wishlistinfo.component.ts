@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class WishlistinfoComponent implements OnInit {
   wishlists:any = [];
   imagetype : string = 'shopping_basket';
-  desc : string = "Oops sorry!...your wishlist is empty."
+  message : string = "Your wishlist is empty!"
+  desc : string = "Save your favourite items here."
+  btnText = 'continue shopping' 
   constructor(
     private _cartService : CartService
   ) { }
