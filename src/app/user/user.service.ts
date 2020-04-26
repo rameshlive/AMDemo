@@ -40,8 +40,9 @@ export class UserService {
   logOut():void{
       if(localStorage.getItem('currentUser')){
           localStorage.removeItem('currentUser');
-          this._router.navigate(['login'])
           this.isLoggedIn = false;
+          this._router.navigate(['login'])
+          
       }
   }
 

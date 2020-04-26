@@ -3,7 +3,7 @@ import { CartService } from './../cart.service';
 import { MessageService } from './../message.service';
 import { BottomsheetComponent } from './../bottomsheet/bottomsheet.component';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 
 @Component({
@@ -13,6 +13,8 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet'
 })
 export class NavComponent implements OnInit {
   wishlistCount : number;
+  sideNavOpened = false;
+  @Output() menuToggle = new EventEmitter();
   constructor(
     private _router:Router,
     private _messageService : MessageService,
@@ -41,5 +43,9 @@ export class NavComponent implements OnInit {
   /*open ewishlists*/
   openWishlist(){
       this._router.navigate(['dashboard/wishlists']);
+  }
+
+  menuToggleFn(){
+      this.menuToggle.emit()
   }
 }

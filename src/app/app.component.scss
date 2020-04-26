@@ -8,3 +8,51 @@
 .mn{
     margin:0;
 }
+.sidenav{
+    width: 250px;
+    overflow: hidden;
+    border: none!important;
+}
+.menu-spacer{
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+.logo span{
+    font-size: 1.5rem;
+    font-family: unset;
+    font-weight: normal;
+}
+
+.app-container{
+    background-image: linear-gradient(to right, #89f7fe, #66a6ff);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: repeat;
+    min-height: 100%;
+}
+.sitename{
+    font-size: 1rem;
+    margin-left: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.fa-icon{
+    width:25px;
+}
+.sidemenu{
+    .mat-list-base .mat-list-item {
+        font-size: 13px;
+    }
+}

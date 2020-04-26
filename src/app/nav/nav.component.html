@@ -1,37 +1,39 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span class="menu-spacer"></span>
+  <mat-toolbar-row>
+    <button mat-icon-button  (click)="menuToggleFn()"> 
+      <mat-icon>menu</mat-icon>
+     <!--  <mat-icon>arrow_back</mat-icon> -->
+    </button>
+    <span class="menu-spacer"></span>
+    <h1>AM Demo</h1>
+    <span class="menu-spacer"></span>
+    <button mat-icon-button>
       <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
-      
-      <!-- Include text description of the icon's meaning for screen-readers -->
-      <span class="cdk-visually-hidden">
-        Example with a home icon with overlaid badge showing the number 15
-      </span>
-        <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>account_box</mat-icon>
-              <span>Accounts</span>
-            </button>
-            <button mat-menu-item (click)="openWishlist()">
-              <mat-icon>favorite</mat-icon>
-              <span>Wishlist ({{ wishlistCount }})</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>settings</mat-icon>
-              <span>Settings</span>
-            </button>
-            <button mat-menu-item (click)="openThemeSwitcher()">
-              <mat-icon>format_color_fill</mat-icon>
-              <span>Theme</span>
-            </button>
-            <button mat-menu-item (click)="logout()">
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Log out</span>
-            </button>
-          </mat-menu>
-    </mat-toolbar-row>
-  </mat-toolbar>
+    </button>
+    <button mat-icon-button>
+      <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_box</mat-icon>
+            <span>Accounts</span>
+          </button>
+          <button mat-menu-item (click)="openWishlist()">
+            <mat-icon>favorite</mat-icon>
+            <span>Wishlist ({{ wishlistCount }})</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+          </button>
+          <button mat-menu-item (click)="openThemeSwitcher()">
+            <mat-icon>format_color_fill</mat-icon>
+            <span>Theme</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

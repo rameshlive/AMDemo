@@ -1,3 +1,4 @@
+import { inject } from '@angular/core/testing';
 import { RoutereventsService } from './services/shared/routerevents.service';
 import { TimeoutComponent } from './timeout/timeout.component';
 import { MatDialog } from '@angular/material';
@@ -9,7 +10,6 @@ import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener } from '@
 import { NgxSpinnerService } from "ngx-spinner";
 import {MediaChange,MediaObserver} from '@angular/flex-layout';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,12 +17,11 @@ import {MediaChange,MediaObserver} from '@angular/flex-layout';
 })
 
 export class AppComponent implements OnInit,OnDestroy{
-  loggedInUser : boolean = false;
+  isUserLogged : boolean;
   selectedTheme : string;
   items :any;
   starColor = "accent";
   showLoader;
-  
   constructor(
     private _userService : UserService,
     private _messageService : MessageService,
@@ -31,18 +30,20 @@ export class AppComponent implements OnInit,OnDestroy{
     private _timeoutPopup : MatDialog,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
-    
   }
 
   ngOnInit(): void {
      
-    
+      this.isUserLogged = this._userService.loggedIn();
+      console.log("App component" + this.isUserLogged)
       this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
           let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
           clearTimeout(this._userService.userActivity);
       })
+
       let themeName = localStorage.getItem("themeName");
+
       if (themeName == undefined || themeName === null) {
           document.body.className = "default-theme";
           this.selectedTheme = "default-theme";
