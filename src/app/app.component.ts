@@ -22,8 +22,9 @@ export class AppComponent implements OnInit,OnDestroy{
   items :any;
   starColor = "accent";
   showLoader;
+  opened = false;
   constructor(
-    private _userService : UserService,
+    public _userService : UserService,
     private _messageService : MessageService,
     private _routereventsService : RoutereventsService,
     private _router:Router,

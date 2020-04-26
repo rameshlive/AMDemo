@@ -19,6 +19,11 @@
 
         <div class="sidemenu"> 
             <mat-nav-list>
+               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard']">
+                  <span matLine><i class="fa fa-dashboard fa-icon"> </i>Dashboard</span>
+                  <mat-icon role="img">arrow_right</mat-icon>
+               </a>
+               <mat-divider></mat-divider>
                <a mat-list-item [routerLink]="['/dashboard']">
                   <span matLine><i class="fa fa-male fa-icon"></i>Men</span>
                   <mat-icon role="img">arrow_right</mat-icon>
@@ -44,7 +49,7 @@
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
                <mat-divider></mat-divider>
-               <a mat-list-item [routerLink]="['/wishlists']">
+               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/wishlists']">
                   <span matLine><i class="fa fa-heart fa-icon"> </i>Wishlist</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
@@ -56,6 +61,7 @@
                   <span matLine><i class="fa fa-tv fa-icon"> </i>Account</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
+               
             </mat-nav-list>
         </div> 
       </mat-sidenav>
