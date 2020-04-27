@@ -56,8 +56,14 @@
         font-size: 13px;
     }
 }
+.mat-drawer-container-has-open{
+    position:fixed;
+    width: 100%;
+}
 .mat-drawer:not(.mat-drawer-side) {
     position: fixed;
+    overflow:scroll;
+
 }
 
 .mat-drawer-backdrop {
