@@ -66,7 +66,6 @@ export class CartService {
         //Save wishlist in local storage
         localStorage.setItem("wishlists",JSON.stringify(this.item));
         this.wishlist.next(this.currentProduct.length);
-
         this.productSubject.next(this.products)
 
     }
@@ -104,6 +103,7 @@ export class CartService {
         return emptyitems;
     }
 
+    // Remove Wishlists by selected id
     removeWishlistById(wishlistId : string){
         this.wishlistProdcuts = JSON.parse(localStorage.getItem('wishlists')) || [];
         let currentUser = localStorage.getItem('currentUser');
@@ -118,9 +118,6 @@ export class CartService {
         remainingProducts = this.getWishlistByCurrentUser();
         return remainingProducts;
     }
-
-
-   
 
     getProducts(){
         this.products = JSON.parse(localStorage.getItem('products'));

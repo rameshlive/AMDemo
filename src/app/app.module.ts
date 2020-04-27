@@ -40,6 +40,7 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
 import { AddtocartComponent } from './components/shared/addtocart/addtocart.component';
 import { FavouriteComponent } from './components/shared/favourite/favourite.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { CollectionbannerComponent } from './components/shared/collectionbanner/collectionbanner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { ProductlistComponent } from './productlist/productlist.component';
     LoaderComponent,
     AddtocartComponent,
     FavouriteComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    CollectionbannerComponent
   ],
   entryComponents:[
     TimerComponent,
