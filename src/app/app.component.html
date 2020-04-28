@@ -25,6 +25,7 @@
                <mat-divider></mat-divider>
                <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/categories/1']">
                   <span matLine><i class="fa fa-male fa-icon"></i>Men</span>
+                  <mat-icon role="img">arrow_right</mat-icon>
                </a>
                <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/categories/2']">
                   <span matLine><i class="fa fa-female fa-icon"> </i>Women</span>
@@ -34,7 +35,7 @@
                   <span matLine><i class="fa fa-child fa-icon"> </i>Kids</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
-               <a mat-list-item  [routerLink]="['/dashboard']">
+               <a mat-list-item  [routerLink]="['/dashboard/categories/4']">
                   <span matLine><i class="fa fa-heart fa-icon"> </i>Beauty & Personal Care</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>

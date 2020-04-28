@@ -28,5 +28,11 @@
                 color: #000;
             }
         }
+       
+    }
+    .p-right.collection-banner{
+        .contain-banner{
+            justify-content: flex-start;
+        }
     }
 }
