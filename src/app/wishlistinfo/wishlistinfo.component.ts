@@ -28,6 +28,7 @@ export class WishlistinfoComponent implements OnInit {
   }
 
   removeWishlistById(selectedId : string){
+    
     this.wishlists = this._cartService.removeWishlistById(selectedId);
   }
 }

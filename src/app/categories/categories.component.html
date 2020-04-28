@@ -1,0 +1,12 @@
+<!--<app-collectionbanner></app-collectionbanner>-->
+<div class="product-list mt-4">
+    <div class="container pn">
+      <div class="row mn">
+        <div class="col pn" *ngFor="let product of products" [style.background]="'#fff'">
+            <div class="product">
+              <product [product]="product"></product>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

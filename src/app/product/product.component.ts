@@ -36,7 +36,6 @@ export class ProductComponent implements OnInit {
 
   addToWishlist(product,selectedProduct){
     this._CartService.addToWishlist(selectedProduct);
-    //this.selectedItem = id;
     let productname = `${product.name} added to your wishlist!`;
     this._wishlistSnack.open(productname, "", {
       duration: 2000,

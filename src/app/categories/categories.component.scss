@@ -1,0 +1,16 @@
+.product-list {
+    .col{
+        width: 50%;
+        padding: 0 5px;
+        flex-basis: auto;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        margin-bottom:10px;
+    }
+    .container.pn{
+        padding: 0 5px;
+        .row{
+            margin: 0 -5px;
+        }
+    }
+}

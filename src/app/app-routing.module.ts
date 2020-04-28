@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CategoriesComponent } from './categories/categories.component';
 
  const routes:Routes =[
     {
@@ -35,8 +36,13 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
           path: 'wishlists',
           component: WishlistinfoComponent
         },
+        {
+          path: 'categories/:id',
+          component: CategoriesComponent
+        },
       ]
     },
+    
     {
       path:'**',
       redirectTo:'login',
