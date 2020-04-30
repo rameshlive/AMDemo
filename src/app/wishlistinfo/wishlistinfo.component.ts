@@ -1,5 +1,6 @@
 import { CartService } from './../cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-wishlistinfo',
   templateUrl: './wishlistinfo.component.html',
@@ -12,7 +13,9 @@ export class WishlistinfoComponent implements OnInit {
   desc : string = "Save your favourite items here."
   btnText = 'continue shopping' 
   constructor(
-    private _cartService : CartService
+    private _cartService : CartService,
+    private titleService : Title
+    
   ) { }
 
   ngOnInit() {

@@ -23,19 +23,19 @@
                   <span matLine><i class="fa fa-dashboard fa-icon"> </i>Dashboard</span>
                </a>
                <mat-divider></mat-divider>
-               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/categories/1']">
+               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/categories/1']">
                   <span matLine><i class="fa fa-male fa-icon"></i>Men</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
-               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/categories/2']">
+               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/categories/2']">
                   <span matLine><i class="fa fa-female fa-icon"> </i>Women</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
-               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/dashboard/categories/3']">
+               <a mat-list-item (click)="sidenav.toggle()" [routerLink]="['/categories/3']">
                   <span matLine><i class="fa fa-child fa-icon"> </i>Kids</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
-               <a mat-list-item  [routerLink]="['/dashboard/categories/4']">
+               <a mat-list-item  (click)="sidenav.toggle()" [routerLink]="['/categories/4']">
                   <span matLine><i class="fa fa-heart fa-icon"> </i>Beauty & Personal Care</span>
                   <mat-icon role="img">arrow_right</mat-icon>
                </a>
@@ -57,7 +57,6 @@
                <a mat-list-item [routerLink]="['/dashboard/account']">
                   <span matLine><i class="fa fa-user fa-icon"> </i>Account</span>
                </a>
-               
             </mat-nav-list>
         </div> 
       </mat-sidenav>

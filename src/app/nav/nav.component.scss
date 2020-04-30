@@ -2,7 +2,21 @@
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
+   
   }
   .header-nav .mat-toolbar-row{
        padding: 0 8px;
+       .pagename{
+         font-size: 0.8rem;
+         line-height: 16px;
+         margin-left: 5px;
+         span{
+            display: block;
+            line-height: 10px;
+            font-size: 0.6rem;
+            font-weight: normal;
+            padding-top: 1px;
+            letter-spacing: 0.5px;
+         }
+      }
   }   

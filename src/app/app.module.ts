@@ -1,3 +1,4 @@
+import { TitleService } from './services/shared/title.service';
 import { LocalusersstorageService } from './localusersstorage.service';
 import { CartService } from './cart.service';
 import { environment } from './../environments/environment';
@@ -42,6 +43,7 @@ import { FavouriteComponent } from './components/shared/favourite/favourite.comp
 import { ProductlistComponent } from './productlist/productlist.component';
 import { CollectionbannerComponent } from './components/shared/collectionbanner/collectionbanner.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { BottomsheetWishlistComponent } from './bottomsheet/wishlist/bottomsheet-wishlist/bottomsheet-wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,14 +70,16 @@ import { CategoriesComponent } from './categories/categories.component';
     FavouriteComponent,
     ProductlistComponent,
     CollectionbannerComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    BottomsheetWishlistComponent
   ],
   entryComponents:[
     TimerComponent,
     BottomsheetComponent,
     AlertpopupComponent,
     WishlistinfoComponent,
-    TimeoutComponent
+    TimeoutComponent,
+    BottomsheetWishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +94,7 @@ import { CategoriesComponent } from './categories/categories.component';
     NgbModule
     
   ],
-  providers: [UserService,AuthGuard,MessageService,RegisterService,CartService,LocalusersstorageService],
+  providers: [ TitleService, UserService,AuthGuard,MessageService,RegisterService,CartService,LocalusersstorageService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

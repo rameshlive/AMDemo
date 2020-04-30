@@ -1,3 +1,6 @@
+import { Title } from '@angular/platform-browser';
+import { Location } from '@angular/common';
+import { TestService } from './test.service';
 import { inject } from '@angular/core/testing';
 import { RoutereventsService } from './services/shared/routerevents.service';
 import { TimeoutComponent } from './timeout/timeout.component';
@@ -6,9 +9,10 @@ import { MessageService } from './message.service';
 import { Observable, Subject } from 'rxjs';
 import { Router, NavigationStart,Event, NavigationEnd } from '@angular/router';
 import { UserService } from './user/user.service';
-import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ChangeDetectorRef } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import {MediaChange,MediaObserver} from '@angular/flex-layout';
+
 
 @Component({
   selector: 'app-root',
@@ -23,20 +27,21 @@ export class AppComponent implements OnInit,OnDestroy{
   starColor = "accent";
   showLoader;
   opened = false;
+
   constructor(
     public _userService : UserService,
     private _messageService : MessageService,
-    private _routereventsService : RoutereventsService,
     private _router:Router,
     private _timeoutPopup : MatDialog,
+    private _location : Location,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
   }
 
   ngOnInit(): void {
-     
+      
       this.isUserLogged = this._userService.loggedIn();
-      console.log("App component" + this.isUserLogged)
+
       this._userService.setUserTimeOut(); 
       this._userService.userInactive.subscribe((n) => {
           let alertDialogRef  =  this._timeoutPopup.open(TimeoutComponent);
@@ -56,12 +61,9 @@ export class AppComponent implements OnInit,OnDestroy{
             document.body.className = x.toString() + '-theme';
           })
       }
-
-      
   }
-  
-  ngOnDestroy(): void {
 
+  ngOnDestroy(): void {
     //this._userService.userInactive.unsubscribe();
   }
  
@@ -72,5 +74,7 @@ export class AppComponent implements OnInit,OnDestroy{
     clearTimeout(this._userService.userActivity);
     this._userService.setUserTimeOut();
   }
+
+  
 
 }

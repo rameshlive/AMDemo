@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     /*get Previous url*/
-    let previousUrl =  this._routereventsService.getPreviousUrl();
+    let previousUrl =  this._routereventsService.getPreviousUrl(); 
     
     if(previousUrl == '/'){
         /* Loading Indicator for Login Component */

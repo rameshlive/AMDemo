@@ -1,10 +1,13 @@
+import { RoutereventsService } from './../services/shared/routerevents.service';
+import { TestService } from './../test.service';
 import { UserService } from './../user/user.service';
 import { CartService } from './../cart.service';
-import { MessageService } from './../message.service';
 import { BottomsheetComponent } from './../bottomsheet/bottomsheet.component';
-import { Router } from '@angular/router';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, EventEmitter, Output, ChangeDetectorRef, SimpleChanges } from '@angular/core';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import  { Location} from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nav',
@@ -15,24 +18,40 @@ export class NavComponent implements OnInit {
   wishlistCount : number;
   sideNavOpened = false;
   @Output() menuToggle = new EventEmitter();
+  backURL;
+  pagename;
+
+  count:string;
   constructor(
     private _router:Router,
-    private _messageService : MessageService,
+    private _routerEvents : RoutereventsService,
     private _cartService :CartService,
     private _userService : UserService,
-    private _bottomSheet : MatBottomSheet) {
-      //this._messageService.getMessage().subscribe( x => console.log(x))
+    private titleService : Title,
+    private _bottomSheet : MatBottomSheet,
+    private _location : Location,
+    private cd: ChangeDetectorRef,
+    private _testService : TestService) {
       this._cartService.getTotalWishlistCount().subscribe(x => this.wishlistCount = x )
      }
 
   ngOnInit() {
-      this._cartService.getTotalWishlistCount().subscribe(x => this.wishlistCount = x )
+      this._cartService.getTotalWishlistCount().subscribe( x => this.wishlistCount = x )
       this.wishlistCount = this.wishlistCount == undefined ? 0 : this.wishlistCount;
+
+      this._testService.pagename.subscribe( x => {
+        this.pagename = x; 
+      })
   }
 
+
   logout(){
-    this._userService.logOut();
-    this._router.navigate(['login']);
+      this._userService.logOut();
+      this._router.navigate(['login']);
+  }
+
+  goBack(){
+      this._location.back();
   }
 
   /*Open Theme Switcher*/
@@ -40,12 +59,22 @@ export class NavComponent implements OnInit {
       this._bottomSheet.open(BottomsheetComponent);
   }
 
-  /*open ewishlists*/
+  /*open Wishlists*/
   openWishlist(){
-      this._router.navigate(['dashboard/wishlists']);
+      //this.titleService.setTitle('Wishlists')
+      this._router.navigate(['/wishlists']);
   }
 
   menuToggleFn(){
       this.menuToggle.emit()
+  }
+
+  ngAfterViewInit() {
+     /*  setTimeout(() => {
+        this._testService.pagename.subscribe( x => {
+          this.pagename = x;
+        })
+        console.log('ng Aftre view init current title::' + this.titleService.getTitle());
+      }); */
   }
 }

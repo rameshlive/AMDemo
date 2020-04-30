@@ -31,18 +31,18 @@ import { CategoriesComponent } from './categories/categories.component';
         {
            path: '',
            component:HomeComponent
-        },
-        {
-          path: 'wishlists',
-          component: WishlistinfoComponent
-        },
-        {
-          path: 'categories/:id',
-          component: CategoriesComponent
-        },
+        }
+       
       ]
     },
-    
+    {
+      path: 'wishlists',
+      component: WishlistinfoComponent
+    },
+    {
+      path: 'categories/:id',
+      component: CategoriesComponent
+    },
     {
       path:'**',
       redirectTo:'login',

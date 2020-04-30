@@ -1,17 +1,28 @@
 <mat-toolbar color="primary" class="header-nav">
   <mat-toolbar-row>
-    <button mat-icon-button  (click)="menuToggleFn()"> 
+    <button mat-icon-button *ngIf="!pagename" (click)="menuToggleFn()"> 
       <mat-icon>menu</mat-icon>
      <!--  <mat-icon>arrow_back</mat-icon> -->
     </button>
-    <span class="menu-spacer"></span>
-    <h1>AM Demo</h1>
+
+    <button *ngIf="pagename" mat-icon-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+   </button>
+
+   <!--  <span *ngIf="!count" class="menu-spacer"></span>
+ -->
+    <h1 *ngIf="!pagename">{{ titleService.getTitle()}}</h1>
+
+    <h1 *ngIf="pagename" class="pagename">{{ pagename | uppercase }} <span>
+      22 items
+    </span></h1> 
+
     <span class="menu-spacer"></span>
     <button mat-icon-button>
-      <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
+        <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
     </button>
     <button mat-icon-button>
-      <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
+        <mat-icon [matMenuTriggerFor]="menu">more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
           <button mat-menu-item>

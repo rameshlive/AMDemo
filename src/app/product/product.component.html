@@ -20,28 +20,17 @@
           </h4>
           <h6 class="mn">$24.99</h6>
           <custom-starrating [color]="'accent'" [star]="5"></custom-starrating>
-          <!-- <button mat-icon-button  #item 
-        [disabled]="product.isWishlisted || selectedItem == product.id" 
-        (click)="addToWishlist(product.id,product.name)" [ngStyle]="btnStyles">
-        <div *ngIf="product.isWishlisted">
-            <mat-icon [ngStyle]="btnStyles" [class.mat-primary]='product.isWishlisted'>favorite</mat-icon>
-        </div>
-        <div *ngIf="!product.isWishlisted">
-            <mat-icon class="mat-primary" [ngStyle]="btnStyles"> {{ selectedItem == product.id ? 'favorite' : 'favorite_border' }}</mat-icon>
-        </div>
-</button>  -->
-        <p class="card-text mt-2" *ngIf="closeIcon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="card-footer shadow" *ngIf="!closeIcon">
-          <div class="container">
-            <div class="row rating-container">
-                <custom-like [color]="'primary'"  [inputStyle]="'20px'"></custom-like>
-                <custom-favourite [color]= "'primary'" [currentProduct]="product" [dimensions]="'20px'" (valueChange)="addToWishlist($event,product)"></custom-favourite>
-                <custom-addtocart [color]="'primary'"  [inputStyle]="'20px'"></custom-addtocart>
+          <p class="card-text mt-2" *ngIf="closeIcon">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="card-footer shadow" *ngIf="!closeIcon">
+            <div class="container">
+              <div class="row rating-container">
+                  <custom-like [color]="'primary'"  [inputStyle]="'20px'"></custom-like>
+                  <custom-favourite [color]= "'primary'" [currentProduct]="product" [dimensions]="'20px'" (valueChange)="addToWishlist($event,product)"></custom-favourite>
+                  <custom-addtocart [color]="'primary'"  [inputStyle]="'20px'"></custom-addtocart>
+              </div>
             </div>
           </div>
-        </div>
-
         <div class="card-footer shadow bg-white" *ngIf="closeIcon">
           <div class="container">
             <div class="row flex-end">

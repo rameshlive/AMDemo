@@ -11,7 +11,10 @@ export class CartService {
     private wishlist = new Subject<number>();
     private productSubject = new Subject<any>();
     private categories = new Subject<any>();
+
     $objCategories = this.categories.asObservable();
+
+    
     wishlistProdcuts : any = [];
     wishlistCount : number;
     item: any = {};

@@ -2,7 +2,8 @@ import { item } from './../home/home.component';
 import { MessageService } from './../message.service';
 import { CartService } from './../cart.service';
 import { Component, OnInit, Input, ViewChild, QueryList, ViewChildren, Output, EventEmitter } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatBottomSheet } from '@angular/material';
+import { BottomsheetWishlistComponent } from '../bottomsheet/wishlist/bottomsheet-wishlist/bottomsheet-wishlist.component';
 
 @Component({
   selector: 'product',
@@ -16,7 +17,7 @@ export class ProductComponent implements OnInit {
   btnStyles;
   @Output() removewishlist = new  EventEmitter();
   constructor(
-    private _wishlistSnack : MatSnackBar,
+    private _bottomSheet : MatBottomSheet,
     private _CartService :CartService
     ) { 
      
@@ -35,12 +36,19 @@ export class ProductComponent implements OnInit {
   }
 
   addToWishlist(product,selectedProduct){
+
     this._CartService.addToWishlist(selectedProduct);
-    let productname = `${product.name} added to your wishlist!`;
-    this._wishlistSnack.open(productname, "", {
+    //let productname = `${product.name} added to your wishlist!`;
+
+    /*this._wishlistSnack.open(productname, "", {
       duration: 2000,
       verticalPosition: 'top'
-    }); 
+    });*/
+
+    //Open bottom sheet component and send product name through data object
+    this._bottomSheet.open(BottomsheetWishlistComponent,{
+       data: { 'productname': product.name },
+    })
 
   }
 
