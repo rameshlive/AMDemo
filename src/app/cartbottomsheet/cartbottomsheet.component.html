@@ -1,0 +1,23 @@
+<div class="cart-popup">
+<mat-toolbar color="primary"><h4 class="text-center">
+    <span matPrefix>
+        <mat-icon>shopping_cart</mat-icon>
+    </span> PRODUCT ADDED TO YOUR CART</h4>
+</mat-toolbar>
+<ul class="item-wrapper ">
+        <li class="item flex">
+            <img src="./assets/{{data.id}}.jpg">
+            <div class="details">
+                <p>
+                {{data.name }} </p>
+            </div>
+            <span class="remove">
+                <mat-icon>delete</mat-icon>
+            </span>
+        </li>
+    </ul>
+    <div class="actions flex">
+        <button mat-stroked-button color="primary" (click)="openCart()">View cart </button>
+        <button mat-flat-button color="primary" (click)="continueShopping()">Continue Shopping</button>
+    </div>
+</div>

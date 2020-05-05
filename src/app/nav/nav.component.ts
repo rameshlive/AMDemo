@@ -54,6 +54,9 @@ export class NavComponent implements OnInit {
       this._location.back();
   }
 
+  openCart(){
+      this._router.navigate(['cart'])
+  }
   /*Open Theme Switcher*/
   openThemeSwitcher(){
       this._bottomSheet.open(BottomsheetComponent);

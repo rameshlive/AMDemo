@@ -18,7 +18,7 @@ export class LikeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.likebtn = 'thumb_up';
+    this.likebtn = 'thumb_up_alt';
     this.btnStyles = {
       'width' : this.inputStyle ? this.inputStyle : '15px',
       'height' : this.inputStyle ? this.inputStyle : '15px',

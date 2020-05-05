@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { WishlistinfoComponent } from './wishlistinfo/wishlistinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -42,6 +43,10 @@ import { CategoriesComponent } from './categories/categories.component';
     {
       path: 'categories/:id',
       component: CategoriesComponent
+    },
+    {
+      path : 'cart',
+      component : CartComponent
     },
     {
       path:'**',

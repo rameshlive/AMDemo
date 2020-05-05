@@ -44,6 +44,9 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { CollectionbannerComponent } from './components/shared/collectionbanner/collectionbanner.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { BottomsheetWishlistComponent } from './bottomsheet/wishlist/bottomsheet-wishlist/bottomsheet-wishlist.component';
+import { TrimPipe } from './pipes/trim.pipe';
+import { CartbottomsheetComponent } from './cartbottomsheet/cartbottomsheet.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +74,10 @@ import { BottomsheetWishlistComponent } from './bottomsheet/wishlist/bottomsheet
     ProductlistComponent,
     CollectionbannerComponent,
     CategoriesComponent,
-    BottomsheetWishlistComponent
+    BottomsheetWishlistComponent,
+    TrimPipe,
+    CartbottomsheetComponent,
+    CartComponent
   ],
   entryComponents:[
     TimerComponent,
@@ -79,7 +85,8 @@ import { BottomsheetWishlistComponent } from './bottomsheet/wishlist/bottomsheet
     AlertpopupComponent,
     WishlistinfoComponent,
     TimeoutComponent,
-    BottomsheetWishlistComponent
+    BottomsheetWishlistComponent,
+    CartbottomsheetComponent
   ],
   imports: [
     BrowserModule,

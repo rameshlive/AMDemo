@@ -1,3 +1,3 @@
-<button mat-icon-button [color]="color" [ngStyle]="currentStyles">
+<button mat-icon-button [color]="color" [ngStyle]="currentStyles" (click)="onSubmit(product.id,product.name)">
     <mat-icon [color]="color" [ngStyle]="currentStyles"> add_shopping_cart </mat-icon>
 </button>

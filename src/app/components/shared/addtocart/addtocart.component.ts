@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Identifiers } from '@angular/compiler';
 
 @Component({
   selector: 'custom-addtocart',
@@ -8,7 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AddtocartComponent implements OnInit {
   @Input('color') color:string;
   @Input('inputStyle') inputStyle : string;
+  @Input('product') product;
   currentStyles;
+  @Output() addtocart = new EventEmitter<Object>();
   constructor() { }
 
   ngOnInit() {
@@ -19,5 +22,10 @@ export class AddtocartComponent implements OnInit {
         'line-height' : this.inputStyle ?  this.inputStyle : '16px'
       }
   }
+  
+  onSubmit(productid : string, productname : string ){
+    this.addtocart.emit({id : productid, name : productname})
+  }
+
 
 }
