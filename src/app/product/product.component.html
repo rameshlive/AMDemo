@@ -19,7 +19,7 @@
           <h4 class="card-title">
             <a href="#">{{product.name}}</a>
           </h4>
-          <h6 class="mn">$24.99</h6>
+          <h6 class="mn">${{ product.price }}</h6>
           <p class="inventory">In Stock : <span>{{ product.instock }} </span></p>
           <p class="card-text mt-2" *ngIf="closeIcon">{{ desc | trim : 40 }}</p>
           </div>

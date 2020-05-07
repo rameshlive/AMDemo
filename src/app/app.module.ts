@@ -47,6 +47,7 @@ import { BottomsheetWishlistComponent } from './bottomsheet/wishlist/bottomsheet
 import { TrimPipe } from './pipes/trim.pipe';
 import { CartbottomsheetComponent } from './cartbottomsheet/cartbottomsheet.component';
 import { CartComponent } from './cart/cart.component';
+import { SortbyPipe } from './pipes/sortby.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +78,8 @@ import { CartComponent } from './cart/cart.component';
     BottomsheetWishlistComponent,
     TrimPipe,
     CartbottomsheetComponent,
-    CartComponent
+    CartComponent,
+    SortbyPipe
   ],
   entryComponents:[
     TimerComponent,

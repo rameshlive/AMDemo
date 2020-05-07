@@ -1,10 +1,10 @@
+import { SortbyPipe } from './../pipes/sortby.pipe';
 import { TestService } from './../test.service';
 import { filter } from 'rxjs/operators';
 import { CartService } from './../cart.service';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -19,12 +19,13 @@ export class CategoriesComponent implements OnInit {
     {catid : 3 , categoryName : 'kids' },
     {catid : 4 , categoryName : 'beauty and healthcare' }
   ]
+
+  sortFields : string[] = ['Name','Price','Rating'];
+  sortDirections :  string[] = [ 'Asc' ,'Desc'];
+
   constructor(
     private _activateRoute:ActivatedRoute,
-    private _cartService : CartService,
-    private titleService : Title,
-    private _router : Router,
-    private cd: ChangeDetectorRef
+    private _cartService : CartService
 
     ) { 
   }

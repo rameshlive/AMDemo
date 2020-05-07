@@ -1,16 +1,9 @@
-import { filter } from 'rxjs/operators';
-import { Title } from '@angular/platform-browser';
-import { Location } from '@angular/common';
-import { TestService } from './test.service';
-import { inject } from '@angular/core/testing';
-import { RoutereventsService } from './services/shared/routerevents.service';
 import { TimeoutComponent } from './timeout/timeout.component';
 import { MatDialog } from '@angular/material';
 import { MessageService } from './message.service';
-import { Observable, Subject } from 'rxjs';
-import { Router, NavigationStart, RouterEvent } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from './user/user.service';
-import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import {MediaChange,MediaObserver} from '@angular/flex-layout';
 
@@ -29,24 +22,22 @@ export class AppComponent implements OnInit,OnDestroy{
   showLoader;
   opened = false;
   showlogo = true;
+  userFirstLetter;
 
   constructor(
     public _userService : UserService,
     private _messageService : MessageService,
     private _router:Router,
     private _timeoutPopup : MatDialog,
-    private _location : Location,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
-      this._router.events.subscribe( e => {
-        if ( e instanceof NavigationStart){
-          console.log("Navigation Started")
-        }
-      })
+      
+      
   }
 
   ngOnInit(): void {
       
+     //Check user logged in
       this.isUserLogged = this._userService.loggedIn();
 
       this._userService.setUserTimeOut(); 
@@ -71,7 +62,8 @@ export class AppComponent implements OnInit,OnDestroy{
 
       setTimeout(() =>{
         this.showlogo = false;
-      },5000)
+      },3000)
+      
   }
 
   ngOnDestroy(): void {

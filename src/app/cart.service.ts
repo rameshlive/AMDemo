@@ -31,22 +31,22 @@ export class CartService {
         this.wishlistProdcuts = this.getWishlistByCurrentUser();
         this.wishlist.next(this.wishlistProdcuts.length);
         this.products = [
-                {id:'prod1', catid:1, rating:3, name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod1.jpg',instock: 'yes'},
-                {id:'prod2', catid:2, rating:1, name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod2.jpg',instock: 'yes'},
-                {id:'prod3', catid:2, rating:4, name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod3.jpg',instock: 'yes'},
-                {id:'prod4', catid:1, rating:2, name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg',instock: 'no'} ,
-                {id:'prod5', catid:1, rating:3, name : 'Women Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg',instock: 'yes'} ,
-                {id:'prod6', catid:2, rating:1, name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod6.jpg',instock: 'yes'} ,
-                {id:'prod7', catid:1, rating:3, name : 'Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod7.jpg',instock: 'no'}, 
-                {id:'prod8', catid:3, rating:5, name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod8.jpg',instock: 'yes'},
-                {id:'prod9', catid:3, rating:2, name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod9.jpg',instock: 'yes'},
-                {id:'prod10',catid:3, rating:3,  name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod10.jpg',instock: 'yes'},
-                {id:'prod11',catid:4, rating:1,  name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod11.jpg',instock: 'no'} ,
-                {id:'prod12',catid:1, rating:3,  name : 'Women  Heels Sandal' , bgColor : '#feb72b',avatar : 'prod12.jpg',instock: 'yes'} ,
-                {id:'prod13',catid:1, rating:4,  name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod13.jpg',instock: 'yes'} ,
-                {id:'prod14',catid:2, rating:4,  name : 'Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod14.jpg',instock: 'yes'},
-                {id:'prod15',catid:2, rating:3,  name : 'Analog Watch' , bgColor : '#feb72b',avatar : 'prod15.jpg',instock: 'no'}, 
-                {id:'prod16',catid:2, rating:3,  name : 'nalog Watch' , bgColor : '#feb72b',avatar : 'prod16.jpg',instock: 'yes' }
+                {id:'prod1', catid:1, price:24.99, rating:3, name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod1.jpg',instock: 'yes'},
+                {id:'prod2', catid:1, price:133.99, rating:1, name : 'T-shirts Combo' , bgColor : '#21bf73',avatar : 'prod2.jpg',instock: 'yes'},
+                {id:'prod3', catid:2, price:5.99, rating:4, name : 'White Winters' , bgColor : '#c02739',avatar : 'prod3.jpg',instock: 'yes'},
+                {id:'prod4', catid:1, price:67.99, rating:2, name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod4.jpg',instock: 'no'} ,
+                {id:'prod5', catid:1, price:45.99, rating:3, name : 'Women Heels Sandal' , bgColor : '#feb72b',avatar : 'prod5.jpg',instock: 'yes'} ,
+                {id:'prod6', catid:1, price:34.99, rating:1, name : 'Black Full Sleeve' , bgColor : '#feb72b',avatar : 'prod6.jpg',instock: 'yes'} ,
+                {id:'prod7', catid:1, price:4.99, rating:3, name : 'Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod7.jpg',instock: 'no'}, 
+                {id:'prod8', catid:3, price:83.99, rating:5, name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod8.jpg',instock: 'yes'},
+                {id:'prod9', catid:3, price:57.99, rating:2, name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod9.jpg',instock: 'yes'},
+                {id:'prod10',catid:3, price:24.99, rating:3, name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod10.jpg',instock: 'yes'},
+                {id:'prod11',catid:4, price:66.99, rating:1, name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod11.jpg',instock: 'no'} ,
+                {id:'prod12',catid:1, price:88.99, rating:3, name : 'Women  Heels Sandal' , bgColor : '#feb72b',avatar : 'prod12.jpg',instock: 'yes'} ,
+                {id:'prod13',catid:1, price:24.99, rating:4, name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod13.jpg',instock: 'yes'} ,
+                {id:'prod14',catid:2, price:12.99, rating:4, name : 'Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod14.jpg',instock: 'yes'},
+                {id:'prod15',catid:2, price:8.99, rating:3, name : 'Blue Birds' , bgColor : '#feb72b',avatar : 'prod15.jpg',instock: 'no'}, 
+                {id:'prod16',catid:2, price:24.99, rating:3, name : 'Yellow Fancy Dress' , bgColor : '#feb72b',avatar : 'prod16.jpg',instock: 'yes' }
             ]
             localStorage.setItem('products',JSON.stringify(this.products));
         

@@ -9,6 +9,7 @@ export class UserService {
   user : any[];
   isLoggedIn : boolean;
   userActivity;
+  username;
   public userInactive = new Subject<number>();
   private islogged: BehaviorSubject<Boolean> = new BehaviorSubject(false);
 
@@ -22,10 +23,12 @@ export class UserService {
   login(username:string,password:string):boolean{
     this.user =  JSON.parse(localStorage.getItem("users")) || [];
     const userExists = this.user.find( x => x.username == username && x.password == password);
+   
     if(!!userExists){
-      localStorage.setItem('currentUser', username);
-      this.isLoggedIn = true;
-      return true;
+        localStorage.setItem('currentUser', username);
+        this.username = localStorage.getItem('currentUser');
+        this.isLoggedIn = true;
+        return true;
     }
     return false;
   }
@@ -50,6 +53,13 @@ export class UserService {
   currentUser():boolean{
     if(localStorage.getItem('currentUser')){
       return JSON.parse(localStorage.getItem('currentUser'));
+    }
+  }
+
+  getCurrentUserFirstLetter(){
+    if(localStorage.getItem('currentUser')){
+      this.username = localStorage.getItem('currentUser');
+      return this.username.toString().slice(0,1);
     }
   }
 
