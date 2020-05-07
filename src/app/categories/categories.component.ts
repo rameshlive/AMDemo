@@ -11,7 +11,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  products;
+  products:any;
   categoryname;
   categories : any[] = [
     {catid : 1 , categoryName : 'men' },
@@ -22,6 +22,9 @@ export class CategoriesComponent implements OnInit {
 
   sortFields : string[] = ['Name','Price','Rating'];
   sortDirections :  string[] = [ 'Asc' ,'Desc'];
+
+  sortField;
+  sortDirection;
 
   constructor(
     private _activateRoute:ActivatedRoute,
