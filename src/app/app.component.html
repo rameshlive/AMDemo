@@ -1,5 +1,7 @@
-
-<div [ngClass]="{'app-container': !this._userService.loggedIn()}">
+<div *ngIf="showlogo" class="logo-container">
+   <img src="assets/logo/logo.png">
+</div>
+<div [ngClass]="{'app-container': !this._userService.loggedIn()}" *ngIf="!showlogo">
    <mat-sidenav-container>
       <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="sidenav" >
         <div class="sidemenu-header">

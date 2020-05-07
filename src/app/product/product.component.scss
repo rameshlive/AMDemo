@@ -23,9 +23,8 @@
     .card-body {
         padding: 0.75rem 0.5rem;
         .card-title {
-            margin-bottom: 0.75rem;
+            margin: 0.5rem 0 0.75rem 0;
             font-size: 0.65rem;
-            /* min-height: 32px; */
             line-height: 1.4;
             font-weight: normal;
             h6 {
@@ -38,6 +37,20 @@
         }
         .card-text{
             font-size: 0.75rem;
+        }
+        .inventory{
+            color : green;
+            color: green;
+            text-transform: capitalize;
+            font-size: 0.7rem;
+            margin: 5px 0 0 0;
+            span{
+                color: #464646;
+                text-transform: uppercase;
+                font-size: 0.6rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
         }
         
     }

@@ -1,5 +1,28 @@
 <!--<app-collectionbanner></app-collectionbanner>-->
-<div class="product-list mt-4">
+<div class="container">
+  <div class="row">
+      <div class="sorting-container">
+        <mat-form-field>
+          <mat-label>sortBy</mat-label>
+          <mat-select [(value)]="sortField">
+            <mat-option value="option1">Name</mat-option>
+            <mat-option value="option2">Price</mat-option>
+            <mat-option value="option3">Rating</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>orderBy</mat-label>
+          <mat-select [(value)]="sortDirection">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Asc</mat-option>
+            <mat-option value="option2">Desc</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+       
+  </div>
+</div>
+<div class="product-list mt-2">
     <div class="container pn">
       <div class="row mn">
         <div class="col pn" *ngFor="let product of products" [style.background]="'#fff'">

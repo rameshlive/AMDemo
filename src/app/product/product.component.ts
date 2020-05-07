@@ -34,15 +34,12 @@ export class ProductComponent implements OnInit {
       'font-size' : '20px',
       'color': 'primary'
     }
-
-
     this.desc = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet."
-   
   }
 
   addToWishlist(product,selectedProduct){
-
     this._CartService.addToWishlist(selectedProduct);
+    
     //Open bottom sheet component and send product name through data object
     this._bottomSheet.open(BottomsheetWishlistComponent,{
        data: { 'productname': product.name },
@@ -51,7 +48,6 @@ export class ProductComponent implements OnInit {
   }
 
   addtocart(item){
-      console.log(item)
       this._bottomSheet.open(CartbottomsheetComponent,{
         data : {'name': item.name,'id': item.id}
       })

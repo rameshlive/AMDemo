@@ -1,3 +1,4 @@
+import { filter } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { TestService } from './test.service';
@@ -7,7 +8,7 @@ import { TimeoutComponent } from './timeout/timeout.component';
 import { MatDialog } from '@angular/material';
 import { MessageService } from './message.service';
 import { Observable, Subject } from 'rxjs';
-import { Router, NavigationStart,Event, NavigationEnd } from '@angular/router';
+import { Router, NavigationStart, RouterEvent } from '@angular/router';
 import { UserService } from './user/user.service';
 import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ChangeDetectorRef } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit,OnDestroy{
   starColor = "accent";
   showLoader;
   opened = false;
+  showlogo = true;
 
   constructor(
     public _userService : UserService,
@@ -36,6 +38,11 @@ export class AppComponent implements OnInit,OnDestroy{
     private _location : Location,
     public _mediaObserver : MediaObserver){ 
       this._mediaObserver.media$.subscribe();
+      this._router.events.subscribe( e => {
+        if ( e instanceof NavigationStart){
+          console.log("Navigation Started")
+        }
+      })
   }
 
   ngOnInit(): void {
@@ -61,6 +68,10 @@ export class AppComponent implements OnInit,OnDestroy{
             document.body.className = x.toString() + '-theme';
           })
       }
+
+      setTimeout(() =>{
+        this.showlogo = false;
+      },5000)
   }
 
   ngOnDestroy(): void {

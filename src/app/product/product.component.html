@@ -15,11 +15,12 @@
     <div class="card h-100">
         <a href="#"><img class="card-img-top" src="./assets/{{product.id}}.jpg" alt=""></a>
         <div class="card-body">
+          <custom-starrating [color]="'accent'" [star]="5" [rating]="product.rating"></custom-starrating>
           <h4 class="card-title">
             <a href="#">{{product.name}}</a>
           </h4>
           <h6 class="mn">$24.99</h6>
-          <custom-starrating [color]="'accent'" [star]="5"></custom-starrating>
+          <p class="inventory">In Stock : <span>{{ product.instock }} </span></p>
           <p class="card-text mt-2" *ngIf="closeIcon">{{ desc | trim : 40 }}</p>
           </div>
           <div class="card-footer shadow" *ngIf="!closeIcon">

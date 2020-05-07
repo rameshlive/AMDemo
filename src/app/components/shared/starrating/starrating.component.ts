@@ -12,7 +12,7 @@ export class StarratingComponent implements OnInit {
   @Input('color') color:string;
   @Input('dimensions') starStyle : string;
   starArray : number[] = [];
-  rating : number = 3;
+  @Input('rating') rating : number;
   currentStyles;
 
   constructor(private _snackBar: MatSnackBar) { }
@@ -32,7 +32,7 @@ export class StarratingComponent implements OnInit {
 
   }
 
-  showIcon(index : number){
+  showIcon(index : number): string{
 
     let startype = index >= this.rating ? "star_border" : "star";
     return startype;
