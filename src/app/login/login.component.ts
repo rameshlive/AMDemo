@@ -88,14 +88,11 @@ export class LoginComponent implements OnInit {
       this.password = this.loginForm.value.password;
       if(this.loginForm.valid){
         let loggedUer = this._userService.login(this.username,this.password);
-        /*Check user exists*/
-        //const isLoggedIn = this._userService.loggedIn();
         if(loggedUer){
           this.errorMsg = "";
-          //this.openSnackbar();
           this._router.navigate(['dashboard']);
         }else{
-            this.errorMsg = "Invalid Username or Password ";
+            this.errorMsg = "username or password is incorrect ";
         }
       }
   }

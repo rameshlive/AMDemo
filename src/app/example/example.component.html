@@ -1,0 +1,28 @@
+
+<div class="slider-wrapper">
+    <h5>Top <mat-label color="'primary'">Brands</mat-label></h5>
+    <ngx-slick-carousel class="carousel" 
+            #slickModal="slick-carousel" 
+            [config]="slideConfig" 
+            (init)="slickInit($event)"
+            (breakpoint)="breakpoint($event)"
+            (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let slide of slides; let i = index;" class="slide">
+                <div class="item-wrapper">
+                    <div class="item">
+                    <img  src="./assets/{{slide.id}}.jpg" alt="" width="100%"/>
+                    <p> {{slide.name}}</p>
+                    </div>
+                </div>
+            </div>
+    </ngx-slick-carousel>
+</div>
+
+
+<!--<button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.slickNext()">Next</button>
+<button (click)="slickModal.slickPrev()">Prev</button>
+<button (click)="slickModal.unslick()">unslick</button>-->

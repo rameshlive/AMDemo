@@ -48,6 +48,10 @@ import { TrimPipe } from './pipes/trim.pipe';
 import { CartbottomsheetComponent } from './cartbottomsheet/cartbottomsheet.component';
 import { CartComponent } from './cart/cart.component';
 import { SortbyPipe } from './pipes/sortby.pipe';
+import { ExampleComponent } from './example/example.component';
+
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +83,8 @@ import { SortbyPipe } from './pipes/sortby.pipe';
     TrimPipe,
     CartbottomsheetComponent,
     CartComponent,
-    SortbyPipe
+    SortbyPipe,
+    ExampleComponent
   ],
   entryComponents:[
     TimerComponent,
@@ -100,7 +105,8 @@ import { SortbyPipe } from './pipes/sortby.pipe';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    SlickCarouselModule
     
   ],
   providers: [ TitleService, UserService,AuthGuard,MessageService,RegisterService,CartService,LocalusersstorageService],

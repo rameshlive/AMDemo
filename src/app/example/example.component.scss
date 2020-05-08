@@ -1,0 +1,46 @@
+   /* the slides */
+
+   .slider-wrapper {
+    margin: 30px 0 20px 10px;
+    h5{
+        text-transform: uppercase;
+        color: #464646;
+        letter-spacing: 0;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        font-size: 17px;
+        &:after{
+            position: absolute;
+            width: 50%;
+            height: 5px;
+            content: '';
+            background: #00b0ff;
+            bottom: 0;
+            left: 0;
+        }
+  }
+   }
+   .slick-slide {
+    margin: 0 10px 0 0;
+  }
+ 
+  .slick-slide:last-child {
+    margin: 0;
+  }
+
+  .item p{
+    text-transform: uppercase;
+    margin: 0;
+    padding: 15px 5px 5px 5px;
+    text-align: center;
+    color: #464646;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
