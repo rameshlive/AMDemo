@@ -23,11 +23,9 @@ export class NavComponent implements OnInit {
 
   count:string;
   constructor(
-    private _router:Router,
-    private _routerEvents : RoutereventsService,
+    public _router:Router,
     private _cartService :CartService,
     private _userService : UserService,
-    private titleService : Title,
     private _bottomSheet : MatBottomSheet,
     private _location : Location,
     private cd: ChangeDetectorRef,
