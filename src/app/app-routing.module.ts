@@ -13,7 +13,7 @@ import { CategoriesComponent } from './categories/categories.component';
  const routes:Routes =[
     {
       path:'',
-      redirectTo:'/login',
+      redirectTo:'/dashboard',
       pathMatch:'full'
     },
     {
@@ -27,7 +27,7 @@ import { CategoriesComponent } from './categories/categories.component';
     {
       path:'dashboard',
       component : DashboardComponent,
-      canActivate: [AuthGuard],
+      //canActivate: [AuthGuard],
       children:[
         {
            path: '',

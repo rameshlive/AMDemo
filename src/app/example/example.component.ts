@@ -1,5 +1,5 @@
 import { CartService } from './../cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-example',
@@ -13,19 +13,21 @@ export class ExampleComponent implements OnInit {
     {img: "http://placehold.it/350x150/333333"},
     {img: "http://placehold.it/350x150/666666"}*/
   ];
+
+  @Input() categoryId :any;
   slideConfig = {
-    "slidesToShow": 1.5, 
+    "slidesToShow": 3.5, 
     "slidesToScroll": 1,
      "arrows": true,
      "infinite": false
-    };
+  };
 
   constructor(private _cartService : CartService) { }
 
   ngOnInit() {
-
+    console.log(this.categoryId)
     this.slides =  this._cartService.getProducts();
-
+    this.slides = this._cartService.getProducts().filter( product  => product.catid == this.categoryId)
   }
   
   addSlide() {

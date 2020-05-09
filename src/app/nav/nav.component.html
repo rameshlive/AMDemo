@@ -11,13 +11,14 @@
 
    <!--  <span *ngIf="!count" class="menu-spacer"></span>
  -->
-    <h1 *ngIf="!pagename"> AMDEMO </h1>
+    <h1 *ngIf="!pagename"> AMCart </h1>
 
     <h1 *ngIf="pagename" class="pagename">{{ pagename | uppercase }} <span>
       22 items
     </span></h1> 
 
     <span class="menu-spacer"></span>
+    <div *ngIf="this._userService.loggedIn()">
     <button mat-icon-button (click)="openCart()">
         <mat-icon matBadge="0" matBadgeColor="accent" class="cart">shopping_cart</mat-icon>
     </button>
@@ -46,5 +47,6 @@
             <span>Log out</span>
           </button>
         </mat-menu>
+      </div>
   </mat-toolbar-row>
 </mat-toolbar>

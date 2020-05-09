@@ -8,7 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class CartComponent implements OnInit {
   imagetype : string = 'shopping_cart';
   message : string = "Your Shopping Cart is empty!"
-  desc : string = "Save your favourite items here."
+  desc : string = "There is nothing in your bag. Let's add some items."
   btnText = 'continue shopping' 
   constructor() { }
 

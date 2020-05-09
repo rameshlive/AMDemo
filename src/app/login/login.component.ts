@@ -69,9 +69,11 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   openSnackbar(){
+
     let snackBarRef = this._snackBar.openFromComponent(TimerComponent,{
-      panelClass: ['mat-toolbar', 'mat-primary']
+        panelClass: ['mat-toolbar', 'mat-primary']
     })
+
     snackBarRef.afterDismissed().subscribe(x => {
       this._router.navigate(['dashboard'])
     })
@@ -97,7 +99,7 @@ export class LoginComponent implements OnInit {
       }
   }
   ngOnDestroy(): void {
-    //this.snackbarSub.unSubscribe();
+     //this.snackbarSub.unSubscribe();
   }
 
 }

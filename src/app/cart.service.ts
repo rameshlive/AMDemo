@@ -13,17 +13,12 @@ export class CartService {
     private categories = new Subject<any>();
 
     $objCategories = this.categories.asObservable();
-
-    
     wishlistProdcuts : any = [];
     wishlistCount : number;
     item: any = {};
     items : any;
     currentProduct :  any = [];
     productids: any = [];
-
-
-   
     products : any = [];
     currentUser : string;
     
@@ -41,16 +36,19 @@ export class CartService {
                 {id:'prod8', catid:3, price:83.99, rating:5, name : 'Ustraa Cologne Spray' , bgColor : '#010a43', avatar : 'prod8.jpg',instock: 'yes'},
                 {id:'prod9', catid:3, price:57.99, rating:2, name : 'Pantry' , bgColor : '#21bf73',avatar : 'prod9.jpg',instock: 'yes'},
                 {id:'prod10',catid:3, price:24.99, rating:3, name : 'Mobiles' , bgColor : '#c02739',avatar : 'prod10.jpg',instock: 'yes'},
-                {id:'prod11',catid:4, price:66.99, rating:1, name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod11.jpg',instock: 'no'} ,
+                {id:'prod11',catid:3, price:66.99, rating:1, name : 'Graphic T-Shirt' , bgColor : '#feb72b',avatar : 'prod11.jpg',instock: 'no'} ,
                 {id:'prod12',catid:1, price:88.99, rating:3, name : 'Women  Heels Sandal' , bgColor : '#feb72b',avatar : 'prod12.jpg',instock: 'yes'} ,
                 {id:'prod13',catid:1, price:24.99, rating:4, name : 'Pink Regular Shorts' , bgColor : '#feb72b',avatar : 'prod13.jpg',instock: 'yes'} ,
                 {id:'prod14',catid:2, price:12.99, rating:4, name : 'Neo Analog Watch' , bgColor : '#feb72b',avatar : 'prod14.jpg',instock: 'yes'},
                 {id:'prod15',catid:2, price:8.99, rating:3, name : 'Blue Birds' , bgColor : '#feb72b',avatar : 'prod15.jpg',instock: 'no'}, 
-                {id:'prod16',catid:2, price:24.99, rating:3, name : 'Yellow Fancy Dress' , bgColor : '#feb72b',avatar : 'prod16.jpg',instock: 'yes' }
+                {id:'prod16',catid:2, price:24.99, rating:3, name : 'Yellow Fancy Dress' , bgColor : '#feb72b',avatar : 'prod16.jpg',instock: 'yes' },
+                {id:'Lakme-Women-Face-Serum',catid:4, price:33.99, rating:3, name : 'Lakme' , bgColor : '#feb72b',avatar : 'Lakme-Women-Face-Serum.jpg',instock: 'yes' },
+                {id:'Philips-Women-Hair-Appliance',catid:4, price:27.99, rating:3, name : 'Philips' , bgColor : '#feb72b',avatar : 'Philips-Women-Hair-Appliance.jpg',instock: 'yes' },
+                {id:'the-man-jaquar',catid:4, price:41.99, rating:3, name : 'them an jaquar' , bgColor : '#feb72b',avatar : 'the-man-jaquar.jpg',instock: 'yes' },
+                {id:'Wstee-Lauder',catid:4, price:26.99, rating:3, name : 'Wstee Lauder' , bgColor : '#feb72b',avatar : 'Wstee-Lauder.jpg',instock: 'yes' }
             ]
             localStorage.setItem('products',JSON.stringify(this.products));
-        
-        this.productSubject.next(this.products);
+            this.productSubject.next(this.products);
     }
     
     addToWishlist(product:any){
@@ -159,7 +157,6 @@ export class CartService {
         if(localStorage.getItem('currentUser')){
             currentUser = localStorage.getItem('currentUser');
         }
-
         return currentUser;
     }
     
