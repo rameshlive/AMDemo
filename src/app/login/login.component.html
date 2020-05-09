@@ -11,14 +11,11 @@
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-toolbar color="primary">Login</mat-toolbar>
             <mat-card-content>
-                <p>
                     <mat-form-field> 
                       <input matInput placeholder="Username" #username="matInput" formControlName="username" required>
                       <mat-icon matSuffix [color]="username.focused? 'primary' : ''">account_box</mat-icon>
                       <mat-error *ngIf="loginForm.get('username').hasError('required')">You must enter username</mat-error>
                     </mat-form-field>
-                </p>
-                <p>
                   <mat-form-field hintLabel="Min 6 characters">
                     <input matInput maxlength="15" #password="matInput" placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
                     <mat-icon matSuffix (click)="togglePasswordIcon()" [color]="password.focused? 'primary':''">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -27,7 +24,6 @@
                     <mat-error *ngIf="loginForm.get('password').hasError('required')">You must enter password</mat-error>
                     <mat-error *ngIf="!loginForm.get('password').hasError('required') && !loginForm.get('password').hasError('invalid')">Password should be atleast minimum 6 characters</mat-error>
                     </mat-form-field>
-                </p>
                 <mat-error>
                   <p *ngIf="!!errorMsg"  [class]="'error'">
                    {{ errorMsg }}
@@ -37,8 +33,8 @@
             </mat-card-content>
             <mat-card-actions>
               <div class="newuser" fxLayou="row" fxLayoutAlign="space-between">
-                <mat-label color="primary"><a [routerLink]="['/']">Forgor Passowrd</a></mat-label>
-                <mat-label color="primary"><a [routerLink]="['/register']" > New User? Register</a></mat-label>
+                <mat-label color="primary"><a [routerLink]="['/']">Forgot Passowrd</a></mat-label>
+                <mat-label color="primary"><a [routerLink]="['/register']" >Register</a></mat-label>
              </div>
               <button color="accent" [disabled]="loginForm.invalid" mat-raised-button aria-label="Press enter to login">Submit</button>
             </mat-card-actions>

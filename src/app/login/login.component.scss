@@ -22,10 +22,18 @@
     background-repeat: repeat;
     min-height: 100%; 
 }
+.login-container .mat-toolbar{
+    color: white;
+    height: 56px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px 5px 0px 0px;
+}
 .example-card {
     padding: 0;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 275px;
+    max-width: 275px;
 }
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 60px;
@@ -35,7 +43,7 @@
     display:block;
  }
 .mat-card-content {
-    margin: 20px 0px;
+    margin: 15px 0px;
     padding: 0 20px;
 }
 .mat-card>.mat-card-actions:last-child {
@@ -46,8 +54,9 @@
 .mat-card-actions{
     margin-left: 0;
     margin-right: 0;
-    padding: 8px 0;
+    padding: 0;
     text-align: center;
+    margin-bottom: 15px;
 }
 .cdk-overlay-container, .cdk-global-overlay-wrapper {
     pointer-events: none;
@@ -63,10 +72,18 @@
 }
 
 .newuser{
-    padding: 20px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
     font-size: 12px;
     a{
-        text-decoration:none;
-        font-weight: bolder;
+        font-weight: normal;
+        color: #464646;
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+        text-decoration: underline;
     }
+}
+
+.mat-drawer-container {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }

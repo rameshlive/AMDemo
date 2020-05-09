@@ -12,10 +12,18 @@
     background-repeat: repeat;
     min-height: 100%; 
 }
+.login-container .mat-toolbar{
+    color: white;
+    height:56px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px 5px 0px 0px;
+}
 .example-card {
     padding: 0;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 275px;
+    max-width: 275px;
 }
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 60px;
@@ -58,8 +66,12 @@
     padding: 0 0 20px 0;
     font-size: 12px;
     a{
-        text-decoration:none;
-        font-weight: bold;
+        font-weight: normal;
+        color: #464646;
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
+        text-decoration: underline;
     }
 }
 .domainname{
@@ -70,4 +82,8 @@
 }
 .mat-hint.success{
     color: green;
+}
+
+.mat-drawer-container {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
